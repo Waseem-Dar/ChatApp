@@ -1,4 +1,5 @@
 import 'package:chat_app/screens/signin_screen.dart';
+import 'package:chat_app/screens/tab_screen.dart';
 import 'package:flutter/material.dart';
 late Size mq;
 void main() {
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
         useMaterial3: true,
       ),
-      home: const SignInScreen(),
+      home: const TabScreen(),
     );
   }
 }

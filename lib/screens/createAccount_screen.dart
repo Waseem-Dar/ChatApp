@@ -26,7 +26,7 @@ class CreateAccountScreen extends StatelessWidget {
                     onPressed: (){
                       Navigator.pop(context);
                     },
-                    icon: const Icon(Icons.arrow_back_ios_new_outlined),
+                    icon: const Icon(Icons.arrow_back_ios_new_outlined,size: 20,color: Colors.black,),
                   ),
                   Text("Create Account",style: GoogleFonts.poppins(fontWeight: FontWeight.w500,fontSize: 20),),
                   const SizedBox(),
