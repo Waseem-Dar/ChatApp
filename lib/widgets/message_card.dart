@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class MessageCard extends StatefulWidget {
-  const MessageCard({super.key});
+  final  int index;
+  const MessageCard({super.key, required this.index});
 
   @override
   State<MessageCard> createState() => _MessageCardState();
@@ -11,7 +12,7 @@ class MessageCard extends StatefulWidget {
 class _MessageCardState extends State<MessageCard> {
   @override
   Widget build(BuildContext context) {
-    return greenMessageImage();
+    return widget.index.isEven?greenMessage():whiteMessage() ;
   }
 }
 
@@ -22,7 +23,7 @@ Widget greenMessage(){
     child: Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        SizedBox(),
+        const SizedBox(),
         Flexible(
           child: Column(
             mainAxisSize: MainAxisSize.min,
@@ -31,7 +32,7 @@ Widget greenMessage(){
               Flexible(
                 child: Container(
                   width: 215,
-                  margin: EdgeInsets.only(bottom: 4),
+                  margin: const EdgeInsets.only(bottom: 4),
                   padding: const EdgeInsets.only(right: 12,left: 15,top: 15,bottom: 15),
                   decoration: const BoxDecoration(
                     color: Color.fromRGBO(13, 74, 100, 1),
@@ -96,7 +97,7 @@ Widget greenMessageImage(){
     child: Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        SizedBox(),
+        const SizedBox(),
         Flexible(
           child: Column(
             mainAxisSize: MainAxisSize.min,
@@ -105,7 +106,7 @@ Widget greenMessageImage(){
               Flexible(
                 child: Container(
                   width: 181,
-                  margin: EdgeInsets.only(bottom: 4),
+                  margin: const EdgeInsets.only(bottom: 4),
                   padding: const EdgeInsets.only(right: 12,left: 15,top: 15,bottom: 15),
                   decoration: const BoxDecoration(
                       color: Color.fromRGBO(13, 74, 100, 1),
@@ -113,17 +114,21 @@ Widget greenMessageImage(){
                   ),
                   child:Row(
                     children: [
-                      ImageIcon(AssetImage("assets/images/fileIcon.png"),color: Colors.white,),
-                      Column(
-                        children: [
-                          Text("Download Image"),
-                          Text("2 MB"),
-                        ],
+                      const ImageIcon(AssetImage("assets/images/fileIcon.png"),color: Colors.white,size: 28,),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 5),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text("Download Image",style: GoogleFonts.poppins(fontWeight: FontWeight.w300,fontSize: 11,color: Colors.white),),
+                            Text("2 MB",style: GoogleFonts.poppins(fontSize: 11,fontWeight: FontWeight.w600,color: Colors.white),),
+                          ],
+                        ),
                       ),
                       IconButton(
                           padding: EdgeInsets.zero,
-                          visualDensity: VisualDensity(vertical: -4,horizontal: -4),
-                          onPressed: (){}, icon: ImageIcon(AssetImage("assets/images/downloadIcon.png"),color: Colors.white,))
+                          visualDensity: const VisualDensity(vertical: -4,horizontal: -4),
+                          onPressed: (){}, icon: const ImageIcon(AssetImage("assets/images/downloadIcon.png"),color: Colors.white,size: 16,))
 
                     ],
                   )

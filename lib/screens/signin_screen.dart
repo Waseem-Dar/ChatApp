@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:chat_app/screens/createAccount_screen.dart';
 import 'package:chat_app/widgets/lebelText_widget.dart';
 import 'package:flutter/material.dart';
@@ -44,14 +46,14 @@ class SignInScreen extends StatelessWidget {
                 height: 36,
                 child: TextFormField(
                   style: GoogleFonts.poppins(
-                    fontWeight: FontWeight.w400,fontSize: 12,
+                    fontWeight: FontWeight.w400,fontSize: 12,color: const Color(0xFF6C6C6C)
                   ),
                   cursorColor: Colors.grey,
                   cursorWidth: 1,
                   decoration: InputDecoration(
-                      hintText: "email",
-                      hintStyle: GoogleFonts.poppins(
-                          fontWeight: FontWeight.w400, fontSize: 12),
+                      // hintText: "email",
+                      // hintStyle: GoogleFonts.poppins(
+                      //     fontWeight: FontWeight.w400, fontSize: 12),
                       contentPadding:
                       const EdgeInsets.symmetric(horizontal: 16),
                       fillColor: Colors.white,
@@ -79,13 +81,14 @@ class SignInScreen extends StatelessWidget {
                   SizedBox(
                     height: 36,
                     child: TextFormField(
+                      style: GoogleFonts.poppins(fontSize: 12,fontWeight: FontWeight.w400,color:const Color(0xFF6C6C6C) ),
                       cursorColor: Colors.grey,
                       obscureText: true,
                       cursorWidth: 1,
                       decoration: InputDecoration(
-                        hintText: "password",
-                        hintStyle: GoogleFonts.poppins(
-                            fontWeight: FontWeight.w400, fontSize: 12),
+                        // hintText: "password",
+                        // hintStyle: GoogleFonts.poppins(
+                        //     fontWeight: FontWeight.w400, fontSize: 12),
                           contentPadding:
                               const EdgeInsets.symmetric(horizontal: 16),
                           fillColor: Colors.white,
@@ -104,10 +107,8 @@ class SignInScreen extends StatelessWidget {
                             ),
                             borderRadius: BorderRadius.circular(19),
                           ),
-
                           suffixIcon: Container(
                             margin: const EdgeInsets.all(10),
-
                             width: 30,
                               decoration: const BoxDecoration(
                                 // color: Colors.red,
@@ -119,12 +120,11 @@ class SignInScreen extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.start,
                     mainAxisSize: MainAxisSize.min,
                     children: [
-
                       Transform.scale(
                         scale: 0.6,
                         child: Checkbox(
                           visualDensity: const VisualDensity(horizontal: -4,vertical: -4),
-                          fillColor: const MaterialStatePropertyAll(Colors.black),
+                          fillColor: const MaterialStatePropertyAll(Color(0xFF595959)),
                           value:checkBox , onChanged: (newValue) {
                           checkBox = newValue;
                         },),
@@ -148,7 +148,6 @@ class SignInScreen extends StatelessWidget {
                         decoration: BoxDecoration(
                             color: const Color(0xFF0D4A64),
                           borderRadius: BorderRadius.circular(25)
-
                         ),
                       child: Center(child: Text("Sign In",style: GoogleFonts.poppins(fontWeight: FontWeight.w400,fontSize: 16,color: Colors.white),)),
                     ),

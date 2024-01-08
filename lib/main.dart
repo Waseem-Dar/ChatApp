@@ -1,3 +1,4 @@
+import 'package:chat_app/screens/profilePages/my_contacts_screen.dart';
 import 'package:chat_app/screens/signin_screen.dart';
 import 'package:chat_app/screens/tab_screen.dart';
 import 'package:flutter/material.dart';

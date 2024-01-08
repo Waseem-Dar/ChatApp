@@ -108,6 +108,7 @@ class _UsersScreenState extends State<UsersScreen> {
                 ),
                 Expanded(
                   child: Container(
+                    clipBehavior: Clip.hardEdge,
                     width: double.infinity,
                     height: double.infinity,
                     decoration: const BoxDecoration(
@@ -143,25 +144,29 @@ class _UsersScreenState extends State<UsersScreen> {
                                       ),
                                       title: Text(user["name"],style: GoogleFonts.poppins(fontSize: 14,fontWeight: FontWeight.w600,color: Colors.black),),
                                       subtitle: Text(user["msg"].toString(),style: GoogleFonts.poppins(fontWeight: FontWeight.w400,fontSize: 11,color:const Color(0xFF6C6C6C) ),maxLines: 1,),
-                                      trailing: Column(
-                                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                                        children: [
-                                          SizedBox(
-                                              width:40,
-                                              child:  Text(user["time"].toString(),style: GoogleFonts.poppins(fontWeight: FontWeight.w500,fontSize: 11,color: const Color(0xFF929292)),textAlign: TextAlign.center,)),
-                                          Container(
-                                            width: 17,
-                                            height: 17,
-                                            decoration: const ShapeDecoration(
-                                              color: Color(0xFF0D4A64),
-                                              shape: OvalBorder(),
-                                            ),
-                                            child: Center(child: Text("3",style: GoogleFonts.poppins(fontSize: 9,fontWeight: FontWeight.w500,color: Colors.white),)),
-                                          )
-                                        ],
+                                      trailing: Padding(
+                                        padding: const EdgeInsets.only(top: 10),
+                                        child: Column(
+                                          mainAxisAlignment: MainAxisAlignment.start,
+                                          children: [
+                                            SizedBox(
+                                                width:40,
+                                                child:  Text(user["time"].toString(),style: GoogleFonts.poppins(fontWeight: FontWeight.w500,fontSize: 11,color: const Color(0xFF929292)),textAlign: TextAlign.center,)),
+                                            Container(
+                                              margin:EdgeInsets.only(top: 5),
+                                              width: 17,
+                                              height: 17,
+                                              decoration: const ShapeDecoration(
+                                                color: Color(0xFF0D4A64),
+                                                shape: OvalBorder(),
+                                              ),
+                                              child: Center(child: Text("3",style: GoogleFonts.poppins(fontSize: 9,fontWeight: FontWeight.w500,color: Colors.white),)),
+                                            )
+                                          ],
+                                        ),
                                       ),
                                     ),
-                                    const Divider(height: 3,endIndent: 8,)
+                                    const Divider(height: 3,endIndent: 8,color:  Color(0x49929292),)
                                   ],
                                 );
                               },)

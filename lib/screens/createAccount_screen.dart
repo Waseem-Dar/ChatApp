@@ -97,6 +97,7 @@ class CreateAccountScreen extends StatelessWidget {
               const TextFieldWidget(hintText: "Confirm your password"),
               const SizedBox(height: 36,),
               InkWell(
+                borderRadius: BorderRadius.circular(25),
                 onTap: () {
                   Navigator.push(context, MaterialPageRoute(builder: (context) => TabScreen(),));
                 },
