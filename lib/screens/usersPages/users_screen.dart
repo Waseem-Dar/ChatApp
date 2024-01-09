@@ -1,4 +1,4 @@
-import 'package:chat_app/screens/chat_screen.dart';
+import 'package:chat_app/screens/usersPages/chat_screen.dart';
 import 'package:chat_app/widgets/user_jsonData.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';

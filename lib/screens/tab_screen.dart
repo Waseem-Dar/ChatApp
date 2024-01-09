@@ -1,7 +1,7 @@
 import 'package:chat_app/screens/influencer_screen.dart';
 import 'package:chat_app/screens/location_screen.dart';
 import 'package:chat_app/screens/profilePages/profile_screen.dart';
-import 'package:chat_app/screens/users_screen.dart';
+import 'package:chat_app/screens/usersPages/users_screen.dart';
 import 'package:flutter/material.dart';
 
 class TabScreen extends StatefulWidget {
@@ -38,13 +38,13 @@ class _TabScreenState extends State<TabScreen> {
                 _currentIndex = index;
               });
             },
-            items: const [
-          BottomNavigationBarItem(
-
-              label: 'location',
-              icon: ImageIcon(AssetImage("assets/images/placeholder.png"),size:25,)),
+            items:  [
+          BottomNavigationBarItem(label: 'location',
+              icon: _currentIndex == 0? ImageIcon(AssetImage("assets/images/placeholder-2.png"),size:25,)
+                  :ImageIcon(AssetImage("assets/images/placeholder.png"),size: 25,)),
           BottomNavigationBarItem(label: 'Users',
-              icon: ImageIcon(AssetImage("assets/images/bubble-chat.png"),size: 25,)),
+              icon: _currentIndex == 1? ImageIcon(AssetImage("assets/images/bubble-chat.png"),size: 25,)
+                  :ImageIcon(AssetImage("assets/images/bubble-2.png"),size: 25,)),
           BottomNavigationBarItem(label: 'Influencer',
               icon: ImageIcon(AssetImage("assets/images/influencer.png"),size: 25,)),
           BottomNavigationBarItem(label: 'Profile',

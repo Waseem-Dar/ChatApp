@@ -1,6 +1,7 @@
+import 'package:chat_app/screens/usersPages/chat_user_details_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import '../widgets/message_card.dart';
+import '../../widgets/message_card.dart';
 
 class ChatScreen extends StatefulWidget {
 
@@ -40,9 +41,14 @@ class _ChatScreenState extends State<ChatScreen> {
                        Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                           InkWell(
-                               onTap:(){Navigator.pop(context);},
-                               child: const Icon(Icons.arrow_back_ios_new_rounded,color: Colors.white,size: 20,)),
+                           // InkWell(
+                           //     onTap:(){Navigator.pop(context);},
+                           //     child: const Icon(Icons.arrow_back_ios_new_rounded,color: Colors.white,size: 20,)),
+                         IconButton(
+                             onPressed: (){},
+                             alignment: Alignment.centerLeft,
+                             visualDensity: VisualDensity(horizontal: -4),
+                             icon: const Icon(Icons.arrow_back_ios_new_rounded,color: Colors.white,size: 20,)),
                          const SizedBox(
                            height: 46,
                            width: 46,
@@ -50,7 +56,11 @@ class _ChatScreenState extends State<ChatScreen> {
                              backgroundImage: AssetImage("assets/images/menImage.png"),
                            ),
                          ),
-                          const InkWell(child: Icon(Icons.more_vert_rounded,color: Colors.white,))
+                           InkWell(
+                            onTap: () {
+                              Navigator.push(context, MaterialPageRoute(builder: (context) => const ChatUserDetailsScreen(),));
+                            },
+                              child: const Icon(Icons.more_vert_rounded,color: Colors.white,))
                         ],
                       ),
                       const SizedBox(height: 5,),

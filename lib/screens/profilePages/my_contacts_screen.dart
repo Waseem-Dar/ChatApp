@@ -66,8 +66,8 @@ class _MyContactsScreenState extends State<MyContactsScreen> {
                       backgroundColor: const Color(0xFF0D4A64),
                       elevation: 0,
                       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(19)),
-                      minimumSize:Size(174, 36),
-                      maximumSize: Size(190, 36)
+                      minimumSize:const Size(174, 36),
+                      maximumSize: const Size(190, 36)
                     ),
                     child: Text("Designate a Guardian",style: GoogleFonts.poppins(
                     fontSize: 12,fontWeight: FontWeight.w400,color: Colors.white),textAlign: TextAlign.center,)),
@@ -267,7 +267,6 @@ class _MyContactsScreenState extends State<MyContactsScreen> {
 
   void _showDialog(){
     showDialog(
-      // barrierColor: Colors.black.withOpacity(0.30000001192092896),
         context: context, builder: (_) => AlertDialog(
               backgroundColor: Colors.white,
               surfaceTintColor: Colors.white,
@@ -289,12 +288,6 @@ class _MyContactsScreenState extends State<MyContactsScreen> {
               TextSpan(text: "Make any of your trusted contacts your Guardian who will always be informed when you press ",
                   style: GoogleFonts.poppins(fontWeight: FontWeight.w400,fontSize: 12,color: Colors.black),),
               TextSpan(
-                onEnter: (event) {
-                  // Navigator.pop(context);
-                },
-                onExit: (event) {
-                  Navigator.pop(context);
-                },
                 text: "Help Button",style: GoogleFonts.poppins(
                   fontSize: 12,fontWeight: FontWeight.w400,color: const Color(0xFF5C90DC)),),
 
