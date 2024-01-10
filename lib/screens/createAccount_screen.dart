@@ -106,7 +106,7 @@ class CreateAccountScreen extends StatelessWidget {
                   height: 37,
                   decoration: BoxDecoration(
                       color: const Color(0xFF0D4A64),
-                      borderRadius: BorderRadius.circular(25)
+                      borderRadius: BorderRadius.circular(25),
 
                   ),
                   child: Center(child: Text("Create Account",style: GoogleFonts.poppins(fontWeight: FontWeight.w400,fontSize: 16,color: Colors.white),)),

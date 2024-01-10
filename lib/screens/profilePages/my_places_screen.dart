@@ -1,6 +1,11 @@
+import 'dart:developer';
+
 import 'package:chat_app/screens/profilePages/add_new_place_screen.dart';
+import 'package:chat_app/screens/profilePages/delete_place_screen.dart';
+import 'package:chat_app/widgets/constant.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class MyPlacesScreen extends StatefulWidget {
   const MyPlacesScreen({super.key});
@@ -8,8 +13,26 @@ class MyPlacesScreen extends StatefulWidget {
   @override
   State<MyPlacesScreen> createState() => _MyPlacesScreenState();
 }
-final List places = ["hi"];
+
+Stream<List<Place>> getPlacesStream() async* {
+  await Future.delayed(const Duration(microseconds: 500));
+  yield Constant.places;
+
+}
+
+
 class _MyPlacesScreenState extends State<MyPlacesScreen> {
+
+  @override
+  void initState() {
+    Stream<List<Place>> getPlacesStream() async* {
+      await Future.delayed(const Duration(microseconds: 500));
+      yield Constant.places;
+    }
+    super.initState();
+  }
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,11 +51,13 @@ class _MyPlacesScreenState extends State<MyPlacesScreen> {
                       onPressed: (){
                         Navigator.pop(context);
                       }, icon: const Icon(Icons.arrow_back_ios_new_rounded,size: 20,)),
-                  Text("My Contacts",style: GoogleFonts.poppins(
+                  Text("My Places",style: GoogleFonts.poppins(
                       fontWeight: FontWeight.w500,fontSize: 20,color: Colors.black),textAlign: TextAlign.center,),
                   InkWell(
                     borderRadius: BorderRadius.circular(12),
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => const AddPlaceScreen(),));
+                    },
                     child: Container(
                       margin: const EdgeInsets.symmetric(horizontal: 10),
                       height: 24,
@@ -49,38 +74,67 @@ class _MyPlacesScreenState extends State<MyPlacesScreen> {
               const SizedBox(height: 50,),
               Text("Your places will be accessible to you when sharing your destination",
                 style: GoogleFonts.poppins(fontSize: 12,fontWeight: FontWeight.w400,color: const  Color(0xFF6C6C6C)),textAlign: TextAlign.justify,),
-              places.isNotEmpty?SizedBox(
+              // Constant.places.isNotEmpty?
+              SizedBox(
                 width: double.infinity,
-                child: ListView.builder(
-                  itemCount: places.length,
-                    shrinkWrap: true,
-                  physics: const NeverScrollableScrollPhysics(),
-                  itemBuilder: (context, index) {
-                  return Padding(
-                    padding: const EdgeInsets.only(bottom: 6),
-                    child: ListTile(
-                      onTap: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => const AddPlaceScreen(),));
-                      },
-                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(19)),
-                      tileColor: Colors.white,
-                      leading: const Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                        ImageIcon(AssetImage("assets/images/dot.png"),size: 11,color: Color(0xFF0D4A64),),
-                        ImageIcon(AssetImage("assets/images/Line.png"),size: 13,color: Color(0xFF0D4A64),),
-                      ]),
-                      title: Text("Home",style: GoogleFonts.poppins(fontWeight: FontWeight.w500,fontSize: 14,color: const  Color(0xFF0D4A64)),),
-                      subtitle:Text("Tap to see more",style: GoogleFonts.poppins(fontSize: 12,fontWeight: FontWeight.w400,color:  const Color(0xFF6C6C6C)),),
-                      trailing: const Icon(Icons.arrow_forward_ios_rounded,color: Color(0xFF0D4A64),size: 15,),
-                    ),
-                  );
-                },),
-              ):   SizedBox(
-                height: MediaQuery.of(context).size.height * .7,
-                child: Center(child: SizedBox(
-                    width: 117,
-                    child: Text("You have no places yet",style: GoogleFonts.poppins(fontWeight: FontWeight.w400,fontSize: 16,color: const  Color(0xFF6C6C6C)),textAlign:TextAlign.center,))),),
+                child: StreamBuilder(
+                    stream: getPlacesStream(),
+                    builder: (context, snapshot) {
+                      if(snapshot.connectionState == ConnectionState.waiting){
+                        return const Center(child: CircularProgressIndicator(color: Color(0xFF0D4A64),),);
+                      }else if(snapshot.hasError){
+                        return const Center(child: Text("Error"),);
+                      }else if(!snapshot.hasData || snapshot.data!.isEmpty){
+                        return  SizedBox(
+                          width: double.infinity,
+                          height: MediaQuery.of(context).size.height * .7,
+                          child: Center(child: SizedBox(
+                              width: 117,
+                              child: Text("You have no places yet",style: GoogleFonts.poppins(
+                                  fontWeight: FontWeight.w400,fontSize: 16,color: const  Color(0xFF6C6C6C)),textAlign:TextAlign.center,))),);
+                      }else{
+                        return  ListView.builder(
+                        itemCount: Constant.places.length,
+                          shrinkWrap: true,
+                        physics: const NeverScrollableScrollPhysics(),
+                        itemBuilder: (context, index) {
+                          Place place = Constant.places[index];
+                          String name = place.name;
+                          LatLng latLng = place.latLng;
+                        return Padding(
+                          padding: const EdgeInsets.only(bottom: 6),
+                          child: ListTile(
+                            onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => DeletePlaceScreen(
+                                      latLng: latLng,
+                                      placeName: name,
+                                    ),
+                                  ),
+                                );
+
+                            },
+                            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(19)),
+                            tileColor: Colors.white,
+                            leading: const Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                              ImageIcon(AssetImage("assets/images/dot.png"),size: 11,color: Color(0xFF0D4A64),),
+                              ImageIcon(AssetImage("assets/images/Line.png"),size: 13,color: Color(0xFF0D4A64),),
+                            ]),
+                            title: Text(name,style: GoogleFonts.poppins(fontWeight: FontWeight.w500,fontSize: 14,color: const  Color(0xFF0D4A64)),),
+                            subtitle:Text("Tap to see more",style: GoogleFonts.poppins(fontSize: 12,fontWeight: FontWeight.w400,color:  const Color(0xFF6C6C6C)),),
+                            trailing: const Icon(Icons.arrow_forward_ios_rounded,color: Color(0xFF0D4A64),size: 15,),
+                          ),
+                        );
+                      },);
+                      }
+                    },),
+                //
+              )
+
             ],
           ),
         ),

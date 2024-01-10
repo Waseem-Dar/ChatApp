@@ -1,10 +1,8 @@
 import 'package:chat_app/screens/profilePages/my_places_screen.dart';
-import 'package:chat_app/screens/usersPages/chat_screen.dart';
 import 'package:chat_app/screens/profilePages/about_spher_screen.dart';
 import 'package:chat_app/screens/profilePages/legal_info_screen.dart';
 import 'package:chat_app/screens/profilePages/my_contacts_screen.dart';
 import 'package:chat_app/screens/profilePages/my_profile_screen.dart';
-import 'package:chat_app/widgets/user_jsonData.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -16,13 +14,7 @@ class ProfileScreen extends StatefulWidget {
   State<ProfileScreen> createState() => _ProfileScreenState();
 }
 
-// return stream dummy JsonData
-Stream<List<Map<String, dynamic>>> getUserStream() async* {
-  await Future.delayed(const Duration(microseconds: 500));
-  yield User.allUser;
-}
-
-// Switch Button status
+//Notification Tile Switch Button status
 bool status = true;
    // ScrollController
 final ScrollController verticalScroll = ScrollController();

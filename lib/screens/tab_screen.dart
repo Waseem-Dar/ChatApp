@@ -26,10 +26,10 @@ class _TabScreenState extends State<TabScreen> {
         padding: const EdgeInsets.symmetric(horizontal: 20),
         child: BottomNavigationBar(
           elevation: 0,
-          selectedIconTheme: const IconThemeData(color: Color.fromRGBO(13, 74, 100, 1)),
             unselectedIconTheme: const IconThemeData(color: Color.fromRGBO(108, 108, 108, 1)),
             showSelectedLabels: false,
             showUnselectedLabels: false,
+
 
             type:BottomNavigationBarType.fixed ,
             currentIndex: _currentIndex,
@@ -40,15 +40,23 @@ class _TabScreenState extends State<TabScreen> {
             },
             items:  [
           BottomNavigationBarItem(label: 'location',
-              icon: _currentIndex == 0? ImageIcon(AssetImage("assets/images/placeholder-2.png"),size:25,)
-                  :ImageIcon(AssetImage("assets/images/placeholder.png"),size: 25,)),
+              icon: _currentIndex == 0?
+                   const ImageIcon(AssetImage("assets/images/placeholder-2.png"),size:25,color: Color.fromRGBO(13, 74, 100, 1))
+                  :const ImageIcon(AssetImage("assets/images/placeholder.png"),size: 25,)),
           BottomNavigationBarItem(label: 'Users',
-              icon: _currentIndex == 1? ImageIcon(AssetImage("assets/images/bubble-chat.png"),size: 25,)
-                  :ImageIcon(AssetImage("assets/images/bubble-2.png"),size: 25,)),
-          BottomNavigationBarItem(label: 'Influencer',
-              icon: ImageIcon(AssetImage("assets/images/influencer.png"),size: 25,)),
-          BottomNavigationBarItem(label: 'Profile',
-              icon: ImageIcon(AssetImage("assets/images/profile.png"),size: 25,)),
+              icon: _currentIndex == 1?
+                   const ImageIcon(AssetImage("assets/images/bubble-chat.png"),size: 25,color: Color.fromRGBO(13, 74, 100, 1),)
+                  :const ImageIcon(AssetImage("assets/images/bubble-2.png"),size: 25,)),
+           BottomNavigationBarItem(label: 'Influencer',
+              icon: _currentIndex == 2 ?
+                   const ImageIcon(AssetImage("assets/images/influencer-2.png"),size: 25,color: Color.fromRGBO(13, 74, 100, 1))
+                  :const ImageIcon(AssetImage("assets/images/influencer.png"),size: 25,),
+          ),
+           BottomNavigationBarItem(label: 'Profile',
+              icon: _currentIndex == 3 ?
+                   const ImageIcon(AssetImage("assets/images/profile.png"),size: 25,color: Color.fromRGBO(13, 74, 100, 1))
+                  :const ImageIcon(AssetImage("assets/images/profile.png"),size: 25,)
+          ),
         ]),
       ),
     );

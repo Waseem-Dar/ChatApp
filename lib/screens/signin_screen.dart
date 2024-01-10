@@ -141,6 +141,7 @@ class SignInScreen extends StatelessWidget {
                   ),
                   const SizedBox(height: 35,),
                   InkWell(
+                    borderRadius: BorderRadius.circular(25),
                     onTap: () {},
                     child: Container(
                       width: 188,
