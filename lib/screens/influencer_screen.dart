@@ -10,6 +10,12 @@ class InfluencerScreen extends StatefulWidget {
   State<InfluencerScreen> createState() => _InfluencerScreenState();
 }
 
+final List<Map<String,dynamic>>  socialList = [
+  {"image":"assets/images/facebookImage.png","title":"Facebook","subTitle":"join a female community!"},
+  {"image":"assets/images/whatsappImage.png","title":"Whatsapp","subTitle":"Let us know what you are missing"},
+  {"image":"assets/images/instagramImage.png","title":"Instagram","subTitle":"Follow & let us share your posts"},
+  {"image":"assets/images/tiktokImage.png","title":"Tiktok","subTitle":"Follow & let us share your reels"},
+];
 
 class _InfluencerScreenState extends State<InfluencerScreen> {
   @override
@@ -47,6 +53,7 @@ class _InfluencerScreenState extends State<InfluencerScreen> {
               ),
               Expanded(
                 child: Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 36,vertical: 30),
                   clipBehavior: Clip.hardEdge,
                   width: double.infinity,
                   height: double.infinity,
@@ -54,16 +61,36 @@ class _InfluencerScreenState extends State<InfluencerScreen> {
                       color: Color(0xFFF2F7FA),
                       borderRadius: BorderRadius.only(topLeft: Radius.circular(40),topRight: Radius.circular(40))
                   ),
-                  child: Column(
-                    children: [
-                      ListTile(
-                        leading: ImageIcon(AssetImage("assets/images/facebookImage.png")),
-                        title: Text("Facebook"),
-                        subtitle: Text("Join a female community!"),
-                      )
-                    ],
-                  )
-
+                  child: ListView.builder(
+                    itemCount: 4,
+                    shrinkWrap: true,
+                    physics:const  NeverScrollableScrollPhysics(),
+                    itemBuilder: (context, index) {
+                      Map<String ,dynamic> list = socialList[index]  ;
+                      String title = list["title"];
+                      String subTitle = list["subTitle"];
+                      String image = list["image"];
+                     return Container(
+                       // height: 55,
+                       margin: const EdgeInsets.only(bottom: 6),
+                       decoration: BoxDecoration(
+                       color: Colors.white,
+                         borderRadius: BorderRadius.circular(20)),
+                       child: ListTile(
+                         dense: true,
+                         onTap: () {},
+                         leading: Container(
+                           height: 31,
+                             width: 31,
+                           decoration: BoxDecoration(
+                             image: DecorationImage(image: AssetImage(image))
+                           ),),
+                         title: Text(title,style: GoogleFonts.poppins(fontWeight: FontWeight.w600,fontSize: 12,),),
+                         subtitle:Text(subTitle,style: GoogleFonts.poppins(fontSize: 10,fontWeight: FontWeight.w400,color:  const Color(0xFF6C6C6C)),),
+                       ),
+                     );
+                    },
+                  ),
                 ),
               )
             ],

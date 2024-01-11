@@ -25,23 +25,25 @@ class AddLocationMapState extends State<AddLocationMap> {
     _selectedLocation = _initialCameraPosition;
   }
 
+
+
   Future<void> _onMapCreated(GoogleMapController controller) async {
     _controller.complete(controller);
   }
 
-  void _onLocationSelected(LatLng location) {
-    setState(() {
-      _markers.clear();
-      _markers.add(
-        Marker(
-          markerId: const MarkerId('Selected Location'),
-          position: location,
-          icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueRed),
-        ),
-      );
-      _selectedLocation = location;
-    });
-  }
+  // void _onLocationSelected(LatLng location) {
+  //   setState(() {
+  //     _markers.clear();
+  //     _markers.add(
+  //       Marker(
+  //         markerId: const MarkerId('Selected Location'),
+  //         position: location,
+  //         icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueRed),
+  //       ),
+  //     );
+  //     _selectedLocation = location;
+  //   });
+  // }
 
   Future<void> _goToLocation(LocationData locationData) async {
     final GoogleMapController controller = await _controller.future;
@@ -78,7 +80,7 @@ class AddLocationMapState extends State<AddLocationMap> {
     }
 
     _locationData = await location.getLocation();
-    _goToLocation(_locationData!);
+    _goToLocation(_locationData);
   }
 
   @override
@@ -96,13 +98,13 @@ class AddLocationMapState extends State<AddLocationMap> {
             _selectedLocation = location;
             _markers = {
               Marker(
-                markerId: MarkerId('selectedLocation'),
+                markerId: const MarkerId('selectedLocation'),
                 position: location,
               ),
             };
           });
           if (widget.onLocationSelected != null) {
-            widget.onLocationSelected!(_selectedLocation!);
+            widget.onLocationSelected!(_selectedLocation);
           }
         },
         zoomControlsEnabled: false,

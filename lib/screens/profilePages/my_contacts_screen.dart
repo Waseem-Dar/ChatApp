@@ -1,3 +1,4 @@
+import 'package:chat_app/screens/profilePages/new_message_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_toggle_tab/flutter_toggle_tab.dart';
@@ -23,7 +24,7 @@ class _MyContactsScreenState extends State<MyContactsScreen> {
           padding: const EdgeInsets.symmetric(horizontal: 24.5),
           child: Column(
             children: [
-              const SizedBox(height: 62,),
+              const SizedBox(height: 60,),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -35,8 +36,12 @@ class _MyContactsScreenState extends State<MyContactsScreen> {
                   Text("My Contacts",style: GoogleFonts.poppins(
                       fontWeight: FontWeight.w500,fontSize: 20,color: Colors.black),textAlign: TextAlign.center,),
                  InkWell(
+
                    borderRadius: BorderRadius.circular(12),
-                   onTap: () {},
+                   overlayColor: const MaterialStatePropertyAll(Colors.transparent),
+                   onTap: () {
+                     Navigator.push(context, MaterialPageRoute(builder: (context) => const  NewMessageScreen(),));
+                   },
                    child: Container(
                      margin: const EdgeInsets.symmetric(horizontal: 10),
                      height: 24,

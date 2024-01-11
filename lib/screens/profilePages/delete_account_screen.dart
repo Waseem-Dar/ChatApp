@@ -54,7 +54,7 @@ class _DeleteAccountScreenState extends State<DeleteAccountScreen> {
                   style: GoogleFonts.poppins(fontSize: 10,fontWeight: FontWeight.w400,color: const Color(0xFF6C6C6C)),),
               ],
             ),
-            SizedBox(height: 15,),
+            const SizedBox(height: 15,),
             InkWell(
               onTap: () {
                 Navigator.push(context, MaterialPageRoute(builder: (context) => const DeleteAccountScreen(),));

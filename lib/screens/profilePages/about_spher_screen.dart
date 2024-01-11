@@ -12,7 +12,7 @@ class AboutSpherScreen extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 24),
         child: Column(
           children: [
-          const SizedBox(height: 60,), 
+          const SizedBox(height: 60,),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
