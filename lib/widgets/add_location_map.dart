@@ -59,34 +59,35 @@ class AddLocationMapState extends State<AddLocationMap> {
 
   Future<void> _getCurrentLocation() async {
     Location location = Location();
-    bool _serviceEnabled;
-    PermissionStatus _permissionGranted;
-    LocationData? _locationData;
+    bool serviceEnabled;
+    PermissionStatus permissionGranted;
+    LocationData? locationData;
 
-    _serviceEnabled = await location.serviceEnabled();
-    if (!_serviceEnabled) {
-      _serviceEnabled = await location.requestService();
-      if (!_serviceEnabled) {
+    serviceEnabled = await location.serviceEnabled();
+    if (!serviceEnabled) {
+      serviceEnabled = await location.requestService();
+      if (!serviceEnabled) {
         return;
       }
     }
 
-    _permissionGranted = await location.hasPermission();
-    if (_permissionGranted == PermissionStatus.denied) {
-      _permissionGranted = await location.requestPermission();
-      if (_permissionGranted != PermissionStatus.granted) {
+    permissionGranted = await location.hasPermission();
+    if (permissionGranted == PermissionStatus.denied) {
+      permissionGranted = await location.requestPermission();
+      if (permissionGranted != PermissionStatus.granted) {
         return;
       }
     }
 
-    _locationData = await location.getLocation();
-    _goToLocation(_locationData);
+    locationData = await location.getLocation();
+    _goToLocation(locationData);
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: GoogleMap(
+        mapType: MapType.normal,
         initialCameraPosition: CameraPosition(
           target: _initialCameraPosition,
           zoom: 14.0,
@@ -107,7 +108,6 @@ class AddLocationMapState extends State<AddLocationMap> {
             widget.onLocationSelected!(_selectedLocation);
           }
         },
-        zoomControlsEnabled: false,
         myLocationEnabled: true,
         myLocationButtonEnabled: false,
       ),

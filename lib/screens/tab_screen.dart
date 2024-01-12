@@ -10,7 +10,7 @@ class TabScreen extends StatefulWidget {
   @override
   State<TabScreen> createState() => _TabScreenState();
 }
-int _currentIndex = 1;
+int _currentIndex = 0;
 final List _tabs = [
   LocationScreen(),
   UsersScreen(),

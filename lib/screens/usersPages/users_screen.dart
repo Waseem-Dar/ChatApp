@@ -71,7 +71,7 @@ class _UsersScreenState extends State<UsersScreen> {
                             child: SizedBox(
                               height: 18,
                               child: TextFormField(
-                                style: GoogleFonts.poppins(fontWeight: FontWeight.w400,fontSize: 12,),
+                                style: GoogleFonts.poppins(fontWeight: FontWeight.w400,fontSize: 12,color: Colors.white),
                                 cursorColor: Colors.grey,
                                 cursorWidth: 1,
                                 cursorHeight: 12,
@@ -153,7 +153,7 @@ class _UsersScreenState extends State<UsersScreen> {
                                                 width:40,
                                                 child:  Text(user["time"].toString(),style: GoogleFonts.poppins(fontWeight: FontWeight.w500,fontSize: 11,color: const Color(0xFF929292)),textAlign: TextAlign.center,)),
                                             Container(
-                                              margin:EdgeInsets.only(top: 5),
+                                              margin:const EdgeInsets.only(top: 5),
                                               width: 17,
                                               height: 17,
                                               decoration: const ShapeDecoration(

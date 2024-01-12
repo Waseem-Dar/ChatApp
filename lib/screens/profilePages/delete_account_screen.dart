@@ -48,6 +48,7 @@ class _DeleteAccountScreenState extends State<DeleteAccountScreen> {
                     fillColor: const MaterialStatePropertyAll(Color(0xFF595959)),
                     value:checkBox , onChanged: (newValue) {
                     checkBox = newValue!;
+                    setState(() {});
                   },),
                 ),
                 Text("I agree, delete my account permanently ",
