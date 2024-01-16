@@ -41,15 +41,12 @@ class _ChatScreenState extends State<ChatScreen> {
                        Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                           // InkWell(
-                           //     onTap:(){Navigator.pop(context);},
-                           //     child: const Icon(Icons.arrow_back_ios_new_rounded,color: Colors.white,size: 20,)),
                          IconButton(
                              onPressed: (){
                                Navigator.pop(context);
                              },
                              alignment: Alignment.centerLeft,
-                             visualDensity: VisualDensity(horizontal: -4),
+                             visualDensity: const VisualDensity(horizontal: -4),
                              icon: const Icon(Icons.arrow_back_ios_new_rounded,color: Colors.white,size: 20,)),
                          const SizedBox(
                            height: 46,
@@ -92,51 +89,47 @@ class _ChatScreenState extends State<ChatScreen> {
                                    itemBuilder: (context, index) {
                                     return  MessageCard(index: index,);
                                      },)),
-                          Column(
-                            children: [
-                              Container(
-                                height: 51,
-                                decoration: BoxDecoration(
-                                color: Colors.white,
-                                  borderRadius: BorderRadius.circular(25.5),
-                                ),
-                                child: Padding(
-                                  padding: const EdgeInsets.symmetric(horizontal: 12,vertical: 0),
-                                  child: Row(
-                                    children: [
-                                      IconButton(
-                                          padding:EdgeInsets.zero,
-                                          visualDensity: const VisualDensity(horizontal: -4,vertical: -4),
-                                          onPressed: (){}, icon: const ImageIcon(AssetImage("assets/images/folderIcon.png"),)),
-                                      const VerticalDivider(
-                                        endIndent: 10,
-                                        indent: 10,
-                                      ),
-                                      Expanded(child: Padding(
-                                        padding: const EdgeInsets.symmetric(horizontal: 5),
-                                        child: TextFormField(
-                                          cursorColor: Colors.grey,
-                                          textAlign: TextAlign.justify,
-                                          keyboardType: TextInputType.multiline,
-                                          minLines: 1,
-                                          maxLines: 3,
-                                          decoration: InputDecoration(
-                                            contentPadding: EdgeInsets.zero,
-                                            hintText: "Write a message...",
-                                            hintStyle: GoogleFonts.poppins(fontSize: 11,fontWeight: FontWeight.w400,fontStyle: FontStyle.italic,),
-                                            border:InputBorder.none
-                                          ),
-                                        ),
-                                      )),
-                                      IconButton(
-                                          padding:EdgeInsets.zero,
-                                          visualDensity: const VisualDensity(horizontal: -4,vertical: -4),
-                                          onPressed: (){}, icon: const ImageIcon(AssetImage("assets/images/sendIcon.png"),))
-                                    ],
+                          Container(
+                            height: 51,
+                            decoration: BoxDecoration(
+                            color: Colors.white,
+                              borderRadius: BorderRadius.circular(26),
+                            ),
+                            child: Padding(
+                              padding: const EdgeInsets.symmetric(horizontal: 12,vertical: 0),
+                              child: Row(
+                                children: [
+                                  IconButton(
+                                      padding:EdgeInsets.zero,
+                                      visualDensity: const VisualDensity(horizontal: -4,vertical: -4),
+                                      onPressed: (){}, icon: const ImageIcon(AssetImage("assets/images/folderIcon.png"),)),
+                                  const VerticalDivider(
+                                    endIndent: 10,
+                                    indent: 10,
                                   ),
-                                ),
+                                  Expanded(child: Padding(
+                                    padding: const EdgeInsets.symmetric(horizontal: 5),
+                                    child: TextFormField(
+                                      cursorColor: Colors.grey,
+                                      textAlign: TextAlign.justify,
+                                      keyboardType: TextInputType.multiline,
+                                      minLines: 1,
+                                      maxLines: 3,
+                                      decoration: InputDecoration(
+                                        contentPadding: EdgeInsets.zero,
+                                        hintText: "Write a message...",
+                                        hintStyle: GoogleFonts.poppins(fontSize: 11,fontWeight: FontWeight.w400,fontStyle: FontStyle.italic,),
+                                        border:InputBorder.none
+                                      ),
+                                    ),
+                                  )),
+                                  IconButton(
+                                      padding:EdgeInsets.zero,
+                                      visualDensity: const VisualDensity(horizontal: -4,vertical: -4),
+                                      onPressed: (){}, icon: const ImageIcon(AssetImage("assets/images/sendIcon.png"),))
+                                ],
                               ),
-                            ],
+                            ),
                           )
                         ],
                       ),

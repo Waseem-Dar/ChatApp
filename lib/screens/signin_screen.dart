@@ -1,7 +1,5 @@
-import 'dart:developer';
-
 import 'package:chat_app/screens/createAccount_screen.dart';
-import 'package:chat_app/widgets/lebelText_widget.dart';
+import 'package:chat_app/widgets/constant.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../main.dart';
@@ -41,7 +39,7 @@ class SignInScreen extends StatelessWidget {
                   const SizedBox(
                     height: 60,
                   ),
-                  const LabelTextWidget(label: "Email"),
+                   Constant.labelText("Email"),
               SizedBox(
                 height: 36,
                 child: TextFormField(
@@ -51,9 +49,9 @@ class SignInScreen extends StatelessWidget {
                   cursorColor: Colors.grey,
                   cursorWidth: 1,
                   decoration: InputDecoration(
-                      // hintText: "email",
-                      // hintStyle: GoogleFonts.poppins(
-                      //     fontWeight: FontWeight.w400, fontSize: 12),
+                      hintText: "email",
+                      hintStyle: GoogleFonts.poppins(
+                          fontWeight: FontWeight.w400, fontSize: 12),
                       contentPadding:
                       const EdgeInsets.symmetric(horizontal: 16),
                       fillColor: Colors.white,
@@ -77,7 +75,7 @@ class SignInScreen extends StatelessWidget {
                   const SizedBox(
                     height: 10,
                   ),
-                  const LabelTextWidget(label: "Password"),
+                  Constant.labelText("Password"),
                   SizedBox(
                     height: 36,
                     child: TextFormField(
@@ -86,9 +84,9 @@ class SignInScreen extends StatelessWidget {
                       obscureText: true,
                       cursorWidth: 1,
                       decoration: InputDecoration(
-                        // hintText: "password",
-                        // hintStyle: GoogleFonts.poppins(
-                        //     fontWeight: FontWeight.w400, fontSize: 12),
+                        hintText: "password",
+                        hintStyle: GoogleFonts.poppins(
+                            fontWeight: FontWeight.w400, fontSize: 12),
                           contentPadding:
                               const EdgeInsets.symmetric(horizontal: 16),
                           fillColor: Colors.white,

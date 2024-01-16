@@ -1,5 +1,5 @@
 import 'package:chat_app/screens/tab_screen.dart';
-import 'package:chat_app/widgets/lebelText_widget.dart';
+import 'package:chat_app/widgets/constant.dart';
 import 'package:chat_app/widgets/textField_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -33,19 +33,19 @@ class CreateAccountScreen extends StatelessWidget {
                 ],
               ),
               const SizedBox(height: 40,),
-              const LabelTextWidget(label: "First Name"),
+              Constant.labelText("First Name"),
               const TextFieldWidget(hintText: "Enter your first name"),
               const SizedBox(height: 10,),
-              const LabelTextWidget(label: "Last Name"),
+              Constant.labelText("Last Name"),
               const TextFieldWidget(hintText: "Enter your last name"),
               const SizedBox(height: 10,),
-              const LabelTextWidget(label: "Username"),
+              Constant.labelText("Username"),
               const TextFieldWidget(hintText: "Enter your Username"),
               const SizedBox(height: 10,),
-              const LabelTextWidget(label: "Email Address"),
+              Constant.labelText("Email Address"),
               const TextFieldWidget(hintText: "Enter your email address"),
               const SizedBox(height: 10,),
-              const LabelTextWidget(label: "Country"),
+              Constant.labelText("Country"),
               SizedBox(
                 height: 36,
                 child: TextFormField(
@@ -70,7 +70,7 @@ class CreateAccountScreen extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 10,),
-              const LabelTextWidget(label: "Phone No"),
+              Constant.labelText("Phone No"),
               Row(
                 children: [
                   Container(
@@ -90,16 +90,16 @@ class CreateAccountScreen extends StatelessWidget {
                 ],
               ),
               const SizedBox(height: 10,),
-              const LabelTextWidget(label: "Password"),
+              Constant.labelText("Password"),
               const TextFieldWidget(hintText: "Enter your password"),
               const SizedBox(height: 10,),
-              const LabelTextWidget(label: "Confirm Password"),
+              Constant.labelText("Confirm Password"),
               const TextFieldWidget(hintText: "Confirm your password"),
               const SizedBox(height: 36,),
               InkWell(
                 borderRadius: BorderRadius.circular(25),
                 onTap: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => TabScreen(),));
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => const TabScreen(),));
                 },
                 child: Container(
                   width: 188,
@@ -107,7 +107,6 @@ class CreateAccountScreen extends StatelessWidget {
                   decoration: BoxDecoration(
                       color: const Color(0xFF0D4A64),
                       borderRadius: BorderRadius.circular(25),
-
                   ),
                   child: Center(child: Text("Create Account",style: GoogleFonts.poppins(fontWeight: FontWeight.w400,fontSize: 16,color: Colors.white),)),
                 ),

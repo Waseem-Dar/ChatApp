@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:chat_app/screens/profilePages/add_new_place_screen.dart';
 import 'package:chat_app/screens/profilePages/delete_place_screen.dart';
 import 'package:chat_app/widgets/constant.dart';
@@ -14,24 +12,18 @@ class MyPlacesScreen extends StatefulWidget {
   State<MyPlacesScreen> createState() => _MyPlacesScreenState();
 }
 
-Stream<List<Place>> getPlacesStream() async* {
-  await Future.delayed(const Duration(microseconds: 500));
-  yield Constant.places;
-
-}
-
-
 class _MyPlacesScreenState extends State<MyPlacesScreen> {
 
   @override
   void initState() {
-    Stream<List<Place>> getPlacesStream() async* {
-      await Future.delayed(const Duration(microseconds: 500));
-      yield Constant.places;
-    }
     super.initState();
+    getPlacesStream();
   }
+  Stream<List<Place>> getPlacesStream() async* {
+    await Future.delayed(const Duration(microseconds: 500));
+    yield Constant.places;
 
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -55,8 +47,9 @@ class _MyPlacesScreenState extends State<MyPlacesScreen> {
                       fontWeight: FontWeight.w500,fontSize: 20,color: Colors.black),textAlign: TextAlign.center,),
                   InkWell(
                     borderRadius: BorderRadius.circular(12),
+                    overlayColor: const MaterialStatePropertyAll(Colors.transparent),
                     onTap: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => const AddPlaceScreen(),));
+                      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const AddPlaceScreen(),));
                     },
                     child: Container(
                       margin: const EdgeInsets.symmetric(horizontal: 10),
@@ -105,16 +98,16 @@ class _MyPlacesScreenState extends State<MyPlacesScreen> {
                           padding: const EdgeInsets.only(bottom: 6),
                           child: ListTile(
                             onTap: () {
-                                Navigator.push(
+                                Navigator.pushReplacement(
                                   context,
                                   MaterialPageRoute(
                                     builder: (context) => DeletePlaceScreen(
+                                      index: index,
                                       latLng: latLng,
                                       placeName: name,
                                     ),
                                   ),
                                 );
-
                             },
                             shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(19)),
                             tileColor: Colors.white,
@@ -132,9 +125,7 @@ class _MyPlacesScreenState extends State<MyPlacesScreen> {
                       },);
                       }
                     },),
-                //
               )
-
             ],
           ),
         ),

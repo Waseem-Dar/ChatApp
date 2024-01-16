@@ -1,5 +1,5 @@
 import 'package:chat_app/screens/profilePages/delete_account_screen.dart';
-import 'package:chat_app/widgets/lebelText_widget.dart';
+import 'package:chat_app/widgets/constant.dart';
 import 'package:chat_app/widgets/textField_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -54,7 +54,7 @@ class _MyProfileScreenState extends State<MyProfileScreen> {
                     onTap: () {},
                     child: Text("Edit your Profile",style: GoogleFonts.poppins( fontWeight: FontWeight.w500,fontSize: 12,color: const Color(0xFF5C90DC)),)),
                 const SizedBox(height: 10,),
-                const LabelTextWidget(label: "First Name"),
+                Constant.labelText("First Name"),
                 SizedBox(
                   height: 36,
                   child: TextFormField(
@@ -87,7 +87,7 @@ class _MyProfileScreenState extends State<MyProfileScreen> {
                   ),
                 ),
                 const SizedBox(height: 15,),
-                const LabelTextWidget(label: "Last Name"),
+                Constant.labelText("Last Name"),
                 SizedBox(
                   height: 36,
                   child: TextFormField(
@@ -121,10 +121,10 @@ class _MyProfileScreenState extends State<MyProfileScreen> {
                   ),
                 ),
                 const SizedBox(height: 10,),
-                const LabelTextWidget(label: "Email Address"),
+                Constant.labelText("Email Address"),
                 const TextFieldWidget(hintText: "LoremIpsum001@gamil.com"),
                 const SizedBox(height: 10,),
-                const LabelTextWidget(label: "Phone No"),
+                Constant.labelText("Phone No"),
                 const TextFieldWidget(hintText: "+92 3311231234"),
                 const SizedBox(height: 31,),
                 InkWell(
@@ -142,8 +142,6 @@ class _MyProfileScreenState extends State<MyProfileScreen> {
                     child: Center(child: Text("Delete Account",style: GoogleFonts.poppins(fontWeight: FontWeight.w400,fontSize: 12, color: const Color(0xFFFF0000)),textAlign: TextAlign.center,)),
                   ),
                 ),
-
-
               ],            //last
             ),
           ),

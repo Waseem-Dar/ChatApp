@@ -34,7 +34,9 @@ dependencies:
   flutter_toggle_tab: ^1.4.1
   fluttertoast: ^8.2.4
   google_maps_flutter: ^2.5.2
+
   location: ^5.0.3
+  flutter_speed_dial: ^7.0.0
 
 
   # The following adds the Cupertino Icons font to your application.

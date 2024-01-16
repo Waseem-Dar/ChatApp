@@ -87,7 +87,7 @@ class _ContactShareLocationScreenState extends State<ContactShareLocationScreen>
                 return Padding(
                   padding: const EdgeInsets.only(bottom: 5),
                   child: ListTile(
-                    contentPadding: EdgeInsets.symmetric(horizontal: 16),
+                    contentPadding: const EdgeInsets.symmetric(horizontal: 16),
                     dense: true,
                     tileColor: Colors.white,
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(19)),
@@ -122,8 +122,6 @@ class _ContactShareLocationScreenState extends State<ContactShareLocationScreen>
                   ),
                 );
               },)
-        
-        
             ],
           ),
         ),

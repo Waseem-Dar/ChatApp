@@ -1,7 +1,5 @@
-import 'dart:developer';
-
+import 'package:chat_app/screens/profilePages/my_places_screen.dart';
 import 'package:chat_app/widgets/constant.dart';
-import 'package:chat_app/widgets/lebelText_widget.dart';
 import 'package:chat_app/widgets/add_location_map.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -66,7 +64,7 @@ class _AddPlaceScreenState extends State<AddPlaceScreen> {
              padding: const EdgeInsets.symmetric(horizontal: 25),
              child: Column(
                children: [
-                 const LabelTextWidget(label: "Name your place"),
+                 Constant.labelText("Name your place"),
                  SizedBox(
                    height: 36,
                    child: TextFormField(
@@ -106,12 +104,12 @@ class _AddPlaceScreenState extends State<AddPlaceScreen> {
            InkWell(
              borderRadius: BorderRadius.circular(25),
              onTap: () {
-               // final place = Place(name: nameController.text.toString(), latLng: _selectedLocation!);
-               // if(nameController.text.isNotEmpty){
-               //   Constant.places.add(place);
-               // }
-               // nameController.clear();
-               // log(Constant.places.length.toString());
+               final place = Place(name: nameController.text.toString(), latLng: _selectedLocation!);
+               if(nameController.text.isNotEmpty){
+                 Constant.places.add(place);
+               }
+               nameController.clear();
+               Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const MyPlacesScreen(),));
              },
              child: Container(
                width: 174,

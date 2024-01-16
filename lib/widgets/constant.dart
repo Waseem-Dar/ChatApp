@@ -1,6 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class Constant{
@@ -55,13 +56,29 @@ class Constant{
     }
   ];
 
+
+
+  static Widget labelText(String label){
+    return Container(
+      margin: const EdgeInsets.only(left: 16),
+      width: double.infinity,
+      child: Text(label,
+        style: GoogleFonts.poppins(
+            fontWeight: FontWeight.w400,
+            fontSize: 12,
+            height: 2.5
+        ),
+
+      ),
+    );
+  }
+
 }
 
 
 class Place {
   String name;
   LatLng latLng;
-
   Place({required this.name, required this.latLng});
 }
 

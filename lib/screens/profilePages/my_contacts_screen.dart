@@ -130,7 +130,6 @@ class _MyContactsScreenState extends State<MyContactsScreen> {
                               fontSize: 10,fontWeight: FontWeight.w400,color: const Color(0xFF6C6C6C)),textAlign: TextAlign.justify,),
                           trailing: Row(
                             mainAxisSize: MainAxisSize.min ,
-
                             children: [
                               InkWell(
                                 onTap:() {

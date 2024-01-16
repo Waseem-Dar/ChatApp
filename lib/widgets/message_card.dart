@@ -69,14 +69,14 @@ Widget whiteMessage(){
               Flexible(
                 child: Container(
                   width: 215,
-                  margin: EdgeInsets.only(bottom: 4),
+                  margin: const EdgeInsets.only(bottom: 4),
                   padding: const EdgeInsets.only(right: 15,left: 12,top: 15,bottom: 15),
                   decoration: const BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.only(topRight: Radius.circular(20),topLeft: Radius.circular(20),bottomRight: Radius.circular(20))
                   ),
                   child:Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut",
-                    style: GoogleFonts.poppins(fontWeight: FontWeight.w300,fontSize: 10,color: Color(0xFF6C6C6C),),
+                    style: GoogleFonts.poppins(fontWeight: FontWeight.w300,fontSize: 10,color: const Color(0xFF6C6C6C),),
                     textAlign: TextAlign.justify,),
                 ),
               ),
@@ -84,7 +84,7 @@ Widget whiteMessage(){
             ],
           ),
         ),
-        SizedBox(),
+        const SizedBox(),
       ],
     ),
   );
@@ -129,7 +129,6 @@ Widget greenMessageImage(){
                           padding: EdgeInsets.zero,
                           visualDensity: const VisualDensity(vertical: -4,horizontal: -4),
                           onPressed: (){}, icon: const ImageIcon(AssetImage("assets/images/downloadIcon.png"),color: Colors.white,size: 16,))
-
                     ],
                   )
                 ),

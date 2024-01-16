@@ -3,7 +3,6 @@ import 'package:chat_app/widgets/constant.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-
 class UsersScreen extends StatefulWidget {
   const UsersScreen({super.key});
 
@@ -16,9 +15,7 @@ Stream<List<Map<String, dynamic>>> getUserStream() async* {
 
   await Future.delayed(const Duration(microseconds: 500));
   yield Constant.allUser;
-
 }
-
 
 class _UsersScreenState extends State<UsersScreen> {
   @override

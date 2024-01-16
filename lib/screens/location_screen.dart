@@ -1,6 +1,5 @@
 import 'dart:async';
-
-import 'package:chat_app/screens/contact_share_location_screen.dart';
+import 'package:chat_app/screens/send_location_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
@@ -16,8 +15,8 @@ class LocationScreen extends StatefulWidget {
 
 class _LocationScreenState extends State<LocationScreen> {
 
-
   bool isMapSatellite = false;
+  bool isExpanded = false;
 
   final Completer<GoogleMapController> controller0 = Completer();
   Set<Marker> markers = {};
@@ -32,25 +31,10 @@ class _LocationScreenState extends State<LocationScreen> {
     selectedLocation = initialCameraPosition;
   }
 
-
-
   Future<void> onMapCreated(GoogleMapController controller) async {
     controller0.complete(controller);
   }
 
-  // void _onLocationSelected(LatLng location) {
-  //   setState(() {
-  //     _markers.clear();
-  //     _markers.add(
-  //       Marker(
-  //         markerId: const MarkerId('Selected Location'),
-  //         position: location,
-  //         icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueRed),
-  //       ),
-  //     );
-  //     _selectedLocation = location;
-  //   });
-  // }
 
   Future<void> goToLocation(LocationData locationData) async {
     final GoogleMapController controller = await controller0.future;
@@ -222,32 +206,39 @@ class _LocationScreenState extends State<LocationScreen> {
           ],
         ),
         floatingActionButtonLocation: FloatingActionButtonLocation.startFloat,
-        floatingActionButton: SizedBox(
+        floatingActionButton: Container(
           height: 40,
+          width: isExpanded?220:40,
           child: FloatingActionButton.extended(
-            onPressed:() {
-              Navigator.push(context,  MaterialPageRoute(builder: (context) => const ContactShareLocationScreen(),));
+            onPressed: () {
+              setState(() {
+                isExpanded = !isExpanded;
+              });
             },
-            elevation: 0,
-            label: Text("Share Location with friends",style: GoogleFonts.inter(fontWeight: FontWeight.w500,fontSize: 12,color: Colors.white),),
-            icon:const ImageIcon(AssetImage("assets/images/shareLocationIcon.png"),color: Colors.white,size: 20,),
             shape: const StadiumBorder(),
             backgroundColor:const Color(0xFF0D4A64),
+            icon:  const Padding(
+              padding: EdgeInsets.only(left: 10),
+              child: ImageIcon(AssetImage("assets/images/shareLocationIcon.png"),color: Colors.white,size: 20,),
+            ),
+            label:isExpanded ? InkWell(
+              overlayColor: const MaterialStatePropertyAll(Colors.transparent),
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => SendLocationScreen(latLng: selectedLocation),));
+              },
+              child: AnimatedContainer(
+                height: 40,
+                duration: const Duration(milliseconds: 300),
+                child: Center(
+                  child: Text(
+                     ' Share my location with my Spher',
+                    style: GoogleFonts.inter(fontWeight: FontWeight.w500,fontSize: 12,color: Colors.white),
+                  ),
+                ),
+              ),
+            ):const SizedBox(),
           ),
         ),
-
-
-        // floatingActionButton: SizedBox(
-        //   height: 40,
-        //   child: FloatingActionButton(
-        //     onPressed:() {},
-        //     shape: const StadiumBorder(),
-        //     mini: true,
-        //     backgroundColor:const Color(0xFF0D4A64),
-        //     child: const ImageIcon(AssetImage("assets/images/shareLocationIcon.png"),color: Colors.white,size: 20,),
-        //   ),
-        // ),
-
       ),
     );
   }

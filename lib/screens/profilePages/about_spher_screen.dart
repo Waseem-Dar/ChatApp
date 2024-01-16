@@ -26,7 +26,7 @@ class AboutSpherScreen extends StatelessWidget {
             ),
               const SizedBox(height: 25,),
               Container(
-                margin: EdgeInsets.only(bottom: 5),
+                margin: const EdgeInsets.only(bottom: 5),
                 width: double.infinity,
                 child: Text("Now it’s just an App, but we aim to change the world",
                   style: GoogleFonts.poppins(fontWeight: FontWeight.w500,fontSize: 12,color: const Color(0xFF0D4A64)),textAlign: TextAlign.left,),
@@ -35,7 +35,7 @@ class AboutSpherScreen extends StatelessWidget {
                 style: GoogleFonts.poppins(fontSize: 12,fontWeight: FontWeight.w400,color: const Color(0xFF6C6C6C)),textAlign: TextAlign.justify,),
                 const SizedBox(height: 25,),
               Container(
-                margin: EdgeInsets.only(bottom: 5),
+                margin: const EdgeInsets.only(bottom: 5),
                 width: double.infinity,
                 child: Text("Now it’s just an App, but we aim to change the world",
                   style: GoogleFonts.poppins(fontWeight: FontWeight.w500,fontSize: 12,color: const Color(0xFF0D4A64)),textAlign: TextAlign.left,),
@@ -44,7 +44,7 @@ class AboutSpherScreen extends StatelessWidget {
                 style: GoogleFonts.poppins(fontSize: 12,fontWeight: FontWeight.w400,color: const Color(0xFF6C6C6C)),textAlign: TextAlign.justify,),
                 const SizedBox(height: 25,),
               Container(
-                margin: EdgeInsets.only(bottom: 5),
+                margin: const EdgeInsets.only(bottom: 5),
                 width: double.infinity,
                 child: Text("Now it’s just an App, but we aim to change the world",
                   style: GoogleFonts.poppins(fontWeight: FontWeight.w500,fontSize: 12,color: const Color(0xFF0D4A64)),textAlign: TextAlign.left,),
@@ -61,32 +61,24 @@ class AboutSpherScreen extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  InkWell(
-                    borderRadius: BorderRadius.circular(10),
-                      onTap: () {},
-                      child:  const ImageIcon(AssetImage("assets/images/instagramIcon.png"),size: 24,color: Color(0xFF0D4A64),)),
+                  socialIcon("assets/images/instagramIcon.png", () {}),
                   const SizedBox(width: 4,),
-                  InkWell(
-                      borderRadius: BorderRadius.circular(10),
-                      onTap: () {},
-                      child: const ImageIcon(AssetImage("assets/images/twiterIcon.png"),size: 24,color: Color(0xFF0D4A64))),
+                  socialIcon("assets/images/twiterIcon.png", () {}),
                   const SizedBox(width: 4,),
-                  InkWell(
-                      borderRadius: BorderRadius.circular(10),
-                      onTap: () {},
-                      child: const ImageIcon(AssetImage("assets/images/facebookIcon.png"),size: 24,color: Color(0xFF0D4A64))),
+                  socialIcon("assets/images/facebookIcon.png", () {}),
                   const SizedBox(width: 4,),
-                  InkWell(
-                      borderRadius: BorderRadius.circular(10),
-                      onTap: () {},
-                      child: const ImageIcon(AssetImage("assets/images/ellipse.png"),size: 24,color: Color(0xFF0D4A64))),
-        
+                 socialIcon("assets/images/ellipse.png", () {}),
                 ],
               )
-        
           ],),
         ),
       ),
     );
+  }
+  Widget socialIcon(String iconPath,VoidCallback onTap ){
+    return  InkWell(
+        borderRadius: BorderRadius.circular(10),
+        onTap: onTap,
+        child:  ImageIcon(AssetImage(iconPath),size: 24,color:const Color(0xFF0D4A64)));
   }
 }

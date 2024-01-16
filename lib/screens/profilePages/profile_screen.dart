@@ -45,11 +45,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 child: Column(
                   children: [
                     const SizedBox(height: 91,),
-                        Text('My Spher',style: GoogleFonts.poppins(fontWeight: FontWeight.w600,fontSize: 32,color: Colors.white),
-                        ),
-
+                        Text('My Spher',style: GoogleFonts.poppins(fontWeight: FontWeight.w600,fontSize: 32,color: Colors.white),),
                     const SizedBox(height: 17,),
-
                   ],
                 ),
               ),
@@ -95,16 +92,14 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             child: Center(
                               child: ListTile(
                                 onTap: () {
-                                  Navigator.push(context, MaterialPageRoute(builder: (context) => const MyProfileScreen(),));
-                                },
+                                  Navigator.push(context, MaterialPageRoute(builder: (context) => const MyProfileScreen(),));},
                                 contentPadding:  const EdgeInsets.symmetric(horizontal: 0),
                                 leading: const ImageIcon(AssetImage("assets/images/userIcon.png"),size: 25,),
                                 title: Text("My Profile",style: GoogleFonts.poppins(fontSize: 14,fontWeight: FontWeight.w500,color: const Color(0xFF0D4A64),),),
                                 subtitle: Text("Tap to edit your profile",style: GoogleFonts.poppins(fontWeight: FontWeight.w400,fontSize: 12,color: const Color(0xFF6C6C6C)),),
                                 trailing: const Icon(Icons.arrow_forward_ios_sharp,color: Color(0xFF0D4A64),size: 15,),
                               ),
-                            ),
-                          ),
+                            ),),
                           const SizedBox(height: 13,),
                           SizedBox(
                             width: double.infinity,
@@ -125,33 +120,25 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                   height: 69,
                                   child: ListTile(
                                     onTap: () {
-                                      Navigator.push(context, MaterialPageRoute(builder: (context) => const MyContactsScreen(),));
-                                    },
+                                      Navigator.push(context, MaterialPageRoute(builder: (context) => const MyContactsScreen(),));},
                                     contentPadding: const EdgeInsets.symmetric(horizontal: 0),
                                     leading: const ImageIcon(AssetImage("assets/images/contact-book.png"),size: 25,),
                                     title: Text("My Contacts",style: GoogleFonts.poppins(fontSize: 14,fontWeight: FontWeight.w500,color: const Color(0xFF0D4A64),),),
                                     subtitle: Text("Manage your contacts",style: GoogleFonts.poppins(fontWeight: FontWeight.w400,fontSize: 12,color: const Color(0xFF6C6C6C)),),
                                     trailing: const Icon(Icons.arrow_forward_ios_sharp,color: Color(0xFF0D4A64),size: 15,),
-                                  ),
-                                ),
-                                const Divider(
-                                  indent: 5,
-                                  color: Color(0x49929292),
-                                  height: 0,
-                                ),
+                                  ),),
+                                const Divider(indent: 5, color: Color(0x49929292), height: 0,),
                                 SizedBox(
                                   height: 69,
                                   child: ListTile(
                                     onTap: () {
-                                      Navigator.push(context, MaterialPageRoute(builder: (context) => const  MyPlacesScreen(),));
-                                    },
+                                      Navigator.push(context, MaterialPageRoute(builder: (context) => const  MyPlacesScreen(),));},
                                     contentPadding: const EdgeInsets.symmetric(horizontal: 0),
                                     leading: const ImageIcon(AssetImage("assets/images/placeholder.png"),size: 25,),
                                     title: Text("My Places",style: GoogleFonts.poppins(fontSize: 14,fontWeight: FontWeight.w500,color: const Color(0xFF0D4A64),),),
                                     subtitle: Text("Add/Edit your favourite places",style: GoogleFonts.poppins(fontWeight: FontWeight.w400,fontSize: 12,color: const Color(0xFF6C6C6C)),),
                                     trailing: const Icon(Icons.arrow_forward_ios_sharp,color: Color(0xFF0D4A64),size: 15,),
-                                  ),
-                                ),
+                                  ),),
                               ],
                             ),),
                           ),
@@ -192,58 +179,41 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                         });
                                       },),
                                     ),
-                                  ),
-                                ),
-                                const Divider(
-                                  indent: 5,
-                                  color: Color(0x49929292),
-                                  height: 0,
-                                ),
+                                  ),),
+                                const Divider(indent: 5, color: Color(0x49929292), height: 0,),
                                 SizedBox(
                                   height: 57,
                                   child: ListTile(
                                     onTap: () {
-                                      Navigator.push(context, MaterialPageRoute(builder: (context) => const LegalInfoScreen(),));
-                                    },
+                                      Navigator.push(context, MaterialPageRoute(builder: (context) => const LegalInfoScreen(),));},
                                     contentPadding: const EdgeInsets.symmetric(horizontal: 0),
                                     leading: const ImageIcon(AssetImage("assets/images/balance.png"),size: 25,),
                                     title: Text("Legal",style: GoogleFonts.poppins(fontSize: 14,fontWeight: FontWeight.w500,color: const Color(0xFF0D4A64),),),
                                     trailing: const Icon(Icons.arrow_forward_ios_sharp,color: Color(0xFF0D4A64),size: 15,),
-                                  ),
-                                ),
-                                const Divider(
-                                  indent: 5,
-                                  color: Color(0x49929292),
-                                  height: 0,
-                                ),
+                                  ),),
+                                const Divider(indent: 5, color: Color(0x49929292), height: 0,),
                                 SizedBox(
                                   height: 57 ,
                                   child: ListTile(
                                     onTap: () {
-                                      Navigator.push(context, MaterialPageRoute(builder: (context) => const AboutSpherScreen(),));
-                                    },
+                                      Navigator.push(context, MaterialPageRoute(builder: (context) => const AboutSpherScreen(),));},
                                     contentPadding: const EdgeInsets.symmetric(horizontal: 0),
                                     leading: const ImageIcon(AssetImage("assets/images/about-tile-icon.png"),size: 25,),
                                     title: Text("About Spher",style: GoogleFonts.poppins(fontSize: 14,fontWeight: FontWeight.w500,color: const Color(0xFF0D4A64),),),
                                     trailing: const Icon(Icons.arrow_forward_ios_sharp,color: Color(0xFF0D4A64),size: 15,),
-                                  ),
-                                ),
+                                  ),),
                               ],
                             ),),
                           ),
-                          const SizedBox(
-                            height: 28,
-                          ),
+                          const SizedBox(height: 28,),
                           InkWell(
-                            onTap: () {
-                            },
+                            onTap: () {},
                             child: Container(
                               width: 174,
                               height: 36,
                               decoration: BoxDecoration(
                                   color:  Colors.white,
-                                  borderRadius: BorderRadius.circular(25)
-                              ),
+                                  borderRadius: BorderRadius.circular(25)),
                               child: Center(child: Text("Sign Out",style: GoogleFonts.poppins(fontWeight: FontWeight.w400,fontSize: 12,color:  const Color(0xFF0D4A64)),)),
                             ),
                           ),
@@ -252,7 +222,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       ),
                     ),
                   ),
-
                 ),
               )
             ],

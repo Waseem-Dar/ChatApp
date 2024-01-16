@@ -25,25 +25,9 @@ class AddLocationMapState extends State<AddLocationMap> {
     _selectedLocation = _initialCameraPosition;
   }
 
-
-
   Future<void> _onMapCreated(GoogleMapController controller) async {
     _controller.complete(controller);
   }
-
-  // void _onLocationSelected(LatLng location) {
-  //   setState(() {
-  //     _markers.clear();
-  //     _markers.add(
-  //       Marker(
-  //         markerId: const MarkerId('Selected Location'),
-  //         position: location,
-  //         icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueRed),
-  //       ),
-  //     );
-  //     _selectedLocation = location;
-  //   });
-  // }
 
   Future<void> _goToLocation(LocationData locationData) async {
     final GoogleMapController controller = await _controller.future;
@@ -86,41 +70,47 @@ class AddLocationMapState extends State<AddLocationMap> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: GoogleMap(
-        mapType: MapType.normal,
-        initialCameraPosition: CameraPosition(
-          target: _initialCameraPosition,
-          zoom: 14.0,
-        ),
-        onMapCreated: _onMapCreated,
-        markers: _markers,
-        onTap: (LatLng location) {
-          setState(() {
-            _selectedLocation = location;
-            _markers = {
-              Marker(
-                markerId: const MarkerId('selectedLocation'),
-                position: location,
-              ),
-            };
-          });
-          if (widget.onLocationSelected != null) {
-            widget.onLocationSelected!(_selectedLocation);
-          }
-        },
-        myLocationEnabled: true,
-        myLocationButtonEnabled: false,
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.endTop,
-      floatingActionButton: FloatingActionButton(
-        onPressed: () => _getCurrentLocation(),
-        backgroundColor: Colors.white,
-        shape: const StadiumBorder(),
-        mini: true,
-        child: const Padding(
-          padding: EdgeInsets.only(right: 1,bottom: 1),
-          child: ImageIcon(AssetImage("assets/images/currentLocation.png"),color: Color(0xFF0D4A64),size: 22,),
-        ),
+      body: Stack(
+        children: [
+          GoogleMap(
+            mapType: MapType.normal,
+            initialCameraPosition: CameraPosition(
+              target: _initialCameraPosition,
+              zoom: 14.0,
+            ),
+            onMapCreated: _onMapCreated,
+            markers: _markers,
+            onTap: (LatLng location) {
+              setState(() {
+                _selectedLocation = location;
+                _markers = {
+                  Marker(
+                    markerId: const MarkerId('selectedLocation'),
+                    position: location,
+                  ),
+                };
+              });
+              if (widget.onLocationSelected != null) {
+                widget.onLocationSelected!(_selectedLocation);
+              }
+            },
+            myLocationEnabled: true,
+            myLocationButtonEnabled: false,
+          ),
+          Positioned(
+            top: 7,
+              right: 10,
+              child: IconButton(
+                  onPressed: () => _getCurrentLocation(),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.white,
+                    elevation: 8,
+                    shadowColor: Colors.black,
+                    padding: const EdgeInsets.only(right: 1,bottom: 1)
+                  ),
+                icon: const ImageIcon(AssetImage("assets/images/currentLocation.png"),color: Color(0xFF0D4A64),size: 22,),)
+          )
+        ],
       ),
     );
   }

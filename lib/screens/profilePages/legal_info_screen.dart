@@ -3,7 +3,6 @@ import 'package:chat_app/screens/profilePages/terms_details_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import 'my_contacts_screen.dart';
 
 class LegalInfoScreen extends StatelessWidget {
   const LegalInfoScreen({super.key});

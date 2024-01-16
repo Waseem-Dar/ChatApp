@@ -1,5 +1,4 @@
-import 'package:chat_app/screens/profilePages/delete_account_screen.dart';
-import 'package:chat_app/widgets/lebelText_widget.dart';
+import 'package:chat_app/widgets/constant.dart';
 import 'package:chat_app/widgets/textField_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -48,7 +47,7 @@ class _ChatUserDetailsScreenState extends State<ChatUserDetailsScreen> {
                 Text("Lorem Ipsum",style: GoogleFonts.poppins(fontSize:17,fontWeight: FontWeight.w500,color: const Color(0xFF0D4A64),),),
                 Text("@Loremipsum001",style: GoogleFonts.poppins( fontWeight: FontWeight.w500,fontSize: 12,color: const Color(0xFF5C90DC)),),
                 const SizedBox(height: 20,),
-                const LabelTextWidget(label: "Phone No"),
+                Constant.labelText("Phone No"),
                 const TextFieldWidget(hintText: "+92 3321231231"),
                 const SizedBox(height: 12,),
                 SizedBox(
@@ -112,8 +111,6 @@ class _ChatUserDetailsScreenState extends State<ChatUserDetailsScreen> {
                     child: Center(child: Text("Delete Account",style: GoogleFonts.poppins(fontWeight: FontWeight.w400,fontSize: 12, color: const Color(0xFFFF0000)),textAlign: TextAlign.center,)),
                   ),
                 ),
-
-
               ],
             ),
           ),
@@ -122,7 +119,6 @@ class _ChatUserDetailsScreenState extends State<ChatUserDetailsScreen> {
       ),
     );
   }
-
 
 void showDeleteDialog(){
   showDialog(context: context, builder: (_) => AlertDialog(

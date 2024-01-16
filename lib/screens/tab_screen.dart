@@ -12,10 +12,10 @@ class TabScreen extends StatefulWidget {
 }
 int _currentIndex = 0;
 final List _tabs = [
-  LocationScreen(),
-  UsersScreen(),
-  InfluencerScreen(),
-  ProfileScreen(),
+  const LocationScreen(),
+  const UsersScreen(),
+  const InfluencerScreen(),
+  const ProfileScreen(),
 ];
 class _TabScreenState extends State<TabScreen> {
   @override
@@ -29,8 +29,6 @@ class _TabScreenState extends State<TabScreen> {
             unselectedIconTheme: const IconThemeData(color: Color.fromRGBO(108, 108, 108, 1)),
             showSelectedLabels: false,
             showUnselectedLabels: false,
-
-
             type:BottomNavigationBarType.fixed ,
             currentIndex: _currentIndex,
             onTap: (index) {

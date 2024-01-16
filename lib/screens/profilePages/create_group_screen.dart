@@ -1,4 +1,4 @@
-import 'package:chat_app/widgets/lebelText_widget.dart';
+import 'package:chat_app/widgets/constant.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -48,7 +48,7 @@ class _CreateGroupScreenState extends State<CreateGroupScreen> {
                   ],
                 ),
                 const SizedBox(height: 21,),
-                const LabelTextWidget(label: "Group name"),
+                Constant.labelText("Group name"),
                 SizedBox(
                   height: 36,
                   child: TextFormField(
@@ -77,7 +77,6 @@ class _CreateGroupScreenState extends State<CreateGroupScreen> {
                         ),
                         borderRadius: BorderRadius.circular(19),
                       ),
-          
                     ),
                   ),
                 ),
@@ -112,7 +111,7 @@ class _CreateGroupScreenState extends State<CreateGroupScreen> {
                 ListView.builder(
                   itemCount: 5 ,
                   shrinkWrap: true,
-                  padding: EdgeInsets.only(bottom: 60),
+                  padding: const EdgeInsets.only(bottom: 60),
                   physics: const  NeverScrollableScrollPhysics(),
                   itemBuilder: (context, index) {
                     return Padding(

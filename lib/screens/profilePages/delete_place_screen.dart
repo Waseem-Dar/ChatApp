@@ -3,20 +3,20 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
+import 'my_places_screen.dart';
+
 class DeletePlaceScreen extends StatefulWidget {
   final LatLng latLng;
   final String placeName;
-  const DeletePlaceScreen({super.key,required this.latLng,required this.placeName});
+  final int index;
+  const DeletePlaceScreen({super.key,required this.latLng,required this.placeName,required this.index});
 
   @override
   State<DeletePlaceScreen> createState() => _DeletePlaceScreenState();
 }
 
-
-
 class _DeletePlaceScreenState extends State<DeletePlaceScreen> {
  LatLng _desiredLocation = const LatLng(33.6881665, 73.1758258);
-  // late LatLng _desiredLocation;
 
   @override
   void initState() {
@@ -26,7 +26,6 @@ class _DeletePlaceScreenState extends State<DeletePlaceScreen> {
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       backgroundColor: const Color(0xFFF2F7FA),
       body: Column(
@@ -57,7 +56,7 @@ class _DeletePlaceScreenState extends State<DeletePlaceScreen> {
               zoomControlsEnabled: false,
               initialCameraPosition: CameraPosition(
                 target: _desiredLocation,
-                zoom: 14.0,
+                zoom: 15.0,
               ),
               markers: {
                 Marker(
@@ -85,6 +84,8 @@ class _DeletePlaceScreenState extends State<DeletePlaceScreen> {
           InkWell(
             borderRadius: BorderRadius.circular(25),
             onTap: () {
+              Constant.places.removeAt(widget.index);
+              Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const MyPlacesScreen(),));
             },
             child: Container(
               width: 174,
