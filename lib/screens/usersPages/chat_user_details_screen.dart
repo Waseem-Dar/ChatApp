@@ -81,9 +81,7 @@ class _ChatUserDetailsScreenState extends State<ChatUserDetailsScreen> {
                 ),
                 const SizedBox(height: 35,),
                 InkWell(
-                  onTap: () {
-
-                  },
+                  onTap: () {},
                   borderRadius: BorderRadius.circular(19),
                   child: Container(
                     width: 174,
@@ -96,25 +94,10 @@ class _ChatUserDetailsScreenState extends State<ChatUserDetailsScreen> {
                   ),
                 ),
                    const SizedBox(height: 13,),
-                   InkWell(
-                  onTap: () {
-                    showDeleteDialog();
-                  },
-                  borderRadius: BorderRadius.circular(19),
-                  child: Container(
-                    width: 174,
-                    height: 36,
-                    decoration: BoxDecoration(
-                        color:  Colors.white,
-                        borderRadius: BorderRadius.circular(19)
-                    ),
-                    child: Center(child: Text("Delete Account",style: GoogleFonts.poppins(fontWeight: FontWeight.w400,fontSize: 12, color: const Color(0xFFFF0000)),textAlign: TextAlign.center,)),
-                  ),
-                ),
+                Constant.mainButton(() {}, "Delete Account", Colors.white, const Color(0xFFFF0000), 12)
               ],
             ),
           ),
-
         ),
       ),
     );
@@ -152,7 +135,4 @@ void showDeleteDialog(){
     ],
   ));
 }
-
 }
-
-

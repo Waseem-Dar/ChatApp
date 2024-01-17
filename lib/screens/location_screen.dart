@@ -19,24 +19,21 @@ class _LocationScreenState extends State<LocationScreen> {
   bool isExpanded = false;
 
   final Completer<GoogleMapController> controller0 = Completer();
-  Set<Marker> markers = {};
   late LatLng initialCameraPosition;
-  static late LatLng selectedLocation;
-
+  late LatLng userCurrentLocation ;
   @override
   void initState() {
     super.initState();
     getCurrentLocation();
-    initialCameraPosition = const LatLng(37.42796133580664, -122.085749655962);
-    selectedLocation = initialCameraPosition;
+    initialCameraPosition  = const LatLng(37.42796133580664, -122.085749655962);
   }
 
   Future<void> onMapCreated(GoogleMapController controller) async {
     controller0.complete(controller);
   }
 
-
   Future<void> goToLocation(LocationData locationData) async {
+    userCurrentLocation = LatLng(locationData.latitude!, locationData.longitude!);
     final GoogleMapController controller = await controller0.future;
     controller.animateCamera(
       CameraUpdate.newCameraPosition(
@@ -48,7 +45,7 @@ class _LocationScreenState extends State<LocationScreen> {
     );
   }
 
-  Future<void> getCurrentLocation() async {
+  Future<LatLng?> getCurrentLocation() async {
     Location location = Location();
     bool serviceEnabled;
     PermissionStatus permissionGranted;
@@ -58,7 +55,7 @@ class _LocationScreenState extends State<LocationScreen> {
     if (!serviceEnabled) {
       serviceEnabled = await location.requestService();
       if (!serviceEnabled) {
-        return;
+        return null;
       }
     }
 
@@ -66,12 +63,12 @@ class _LocationScreenState extends State<LocationScreen> {
     if (permissionGranted == PermissionStatus.denied) {
       permissionGranted = await location.requestPermission();
       if (permissionGranted != PermissionStatus.granted) {
-        return;
+        return null;
       }
     }
-
     locationData = await location.getLocation();
     goToLocation(locationData);
+    return null;
   }
 
   @override
@@ -90,21 +87,6 @@ class _LocationScreenState extends State<LocationScreen> {
                 zoom: 14.0,
               ),
               onMapCreated: onMapCreated,
-              markers: markers,
-              onTap: (LatLng location) {
-                setState(() {
-                  selectedLocation = location;
-                  markers = {
-                    Marker(
-                      markerId: const MarkerId('selectedLocation'),
-                      position: location,
-                    ),
-                  };
-                });
-                if (widget.onLocationSelected != null) {
-                  widget.onLocationSelected!(selectedLocation);
-                }
-              },
               myLocationEnabled: true,
               myLocationButtonEnabled: false,
             ),
@@ -195,8 +177,6 @@ class _LocationScreenState extends State<LocationScreen> {
                           child: ImageIcon(
                             AssetImage("assets/images/searchIcon.png"),color: Colors.white,),
                         ),
-
-
                       ),
                     ),
                   ),
@@ -207,6 +187,7 @@ class _LocationScreenState extends State<LocationScreen> {
         ),
         floatingActionButtonLocation: FloatingActionButtonLocation.startFloat,
         floatingActionButton: Container(
+          margin:const EdgeInsets.only(bottom: 12),
           height: 40,
           width: isExpanded?220:40,
           child: FloatingActionButton.extended(
@@ -223,15 +204,14 @@ class _LocationScreenState extends State<LocationScreen> {
             ),
             label:isExpanded ? InkWell(
               overlayColor: const MaterialStatePropertyAll(Colors.transparent),
-              onTap: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => SendLocationScreen(latLng: selectedLocation),));
+              onTap: () async{
+                Navigator.push(context, MaterialPageRoute(builder: (context) => SendLocationScreen(latLng:userCurrentLocation),));
               },
               child: AnimatedContainer(
                 height: 40,
                 duration: const Duration(milliseconds: 300),
                 child: Center(
-                  child: Text(
-                     ' Share my location with my Spher',
+                  child: Text(' Share my location with my Spher ',
                     style: GoogleFonts.inter(fontWeight: FontWeight.w500,fontSize: 12,color: Colors.white),
                   ),
                 ),

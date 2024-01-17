@@ -1,6 +1,4 @@
-import 'package:chat_app/screens/profilePages/my_contacts_screen.dart';
 import 'package:chat_app/screens/signin_screen.dart';
-import 'package:chat_app/screens/tab_screen.dart';
 import 'package:flutter/material.dart';
 late Size mq;
 void main() {
@@ -17,11 +15,10 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
-
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
         useMaterial3: true,
       ),
-      home: const TabScreen(),
+      home: const SignInScreen(),
     );
   }
 }

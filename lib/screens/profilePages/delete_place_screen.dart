@@ -3,8 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
-import 'my_places_screen.dart';
-
 class DeletePlaceScreen extends StatefulWidget {
   final LatLng latLng;
   final String placeName;
@@ -40,7 +38,7 @@ class _DeletePlaceScreenState extends State<DeletePlaceScreen> {
                     onPressed: (){
                       Navigator.pop(context);
                     }, icon: const Icon(Icons.arrow_back_ios_new_rounded,size: 20,)),
-                Text("Add new place",style: GoogleFonts.poppins(
+                Text("My Places",style: GoogleFonts.poppins(
                     fontWeight: FontWeight.w500,fontSize: 20,color: Colors.black),textAlign: TextAlign.center,),
                 const SizedBox(width: 30,),
               ],
@@ -81,24 +79,12 @@ class _DeletePlaceScreenState extends State<DeletePlaceScreen> {
             ),
           ),
           const SizedBox(height: 35,),
-          InkWell(
-            borderRadius: BorderRadius.circular(25),
-            onTap: () {
+          Constant.mainButton(() {
               Constant.places.removeAt(widget.index);
-              Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const MyPlacesScreen(),));
-            },
-            child: Container(
-              width: 174,
-              height: 36,
-              decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(25)
-              ),
-              child: Center(child: Text("Delete Place",style: GoogleFonts.poppins(fontWeight: FontWeight.w400,fontSize: 16,color: const Color(0xFFFF0000)),)),
-            ),
-          ),
+              Navigator.pop(context);
+              },
+              "Delete Place", Colors.white, const Color(0xFFFF0000), 16)
         ],
       ),
     );
-  }
-}
+  }}

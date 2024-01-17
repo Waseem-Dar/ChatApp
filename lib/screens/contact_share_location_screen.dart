@@ -1,3 +1,4 @@
+import 'package:chat_app/widgets/constant.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -17,17 +18,8 @@ class _ContactShareLocationScreenState extends State<ContactShareLocationScreen>
     return Scaffold(
       backgroundColor: const Color(0xFFF2F7FA),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-      floatingActionButton: SizedBox(
-        height: 36,
-        width: 174,
-        child: FloatingActionButton.extended(
-          backgroundColor:const  Color(0xFF0D4A64),
-          elevation: 0,
-          shape: const StadiumBorder(),
-          onPressed: () {},
-          label: Text("Continue",style: GoogleFonts.poppins(fontWeight: FontWeight.w400,fontSize: 12,color: Colors.white),),
-        ),
-      ),
+      floatingActionButton: Constant.mainButton( () {},
+          "Continue",const Color(0xFF0D4A64), Colors.white, 12),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 25),

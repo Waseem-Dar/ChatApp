@@ -8,7 +8,7 @@ class CreateGroupScreen extends StatefulWidget {
   @override
   State<CreateGroupScreen> createState() => _CreateGroupScreenState();
 }
-
+TextEditingController groupNameController = TextEditingController();
 bool checkBoxAll = false;
 List<bool> checkBoxList = List.generate(5, (index) => false);
 
@@ -20,17 +20,8 @@ class _CreateGroupScreenState extends State<CreateGroupScreen> {
       child: Scaffold(
         backgroundColor: const Color(0xFFF2F7FA),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-        floatingActionButton: SizedBox(
-          height: 36,
-          width: 174,
-          child: FloatingActionButton.extended(
-            backgroundColor:const  Color(0xFF0D4A64),
-            elevation: 0,
-            shape: const StadiumBorder(),
-            onPressed: () {},
-            label: Text("Continue",style: GoogleFonts.poppins(fontWeight: FontWeight.w400,fontSize: 12,color: Colors.white),),
-          ),
-        ),
+        floatingActionButton: Constant.mainButton( () {},
+            "Continue",const Color(0xFF0D4A64), Colors.white, 12),
         body: SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 25),
@@ -49,37 +40,7 @@ class _CreateGroupScreenState extends State<CreateGroupScreen> {
                 ),
                 const SizedBox(height: 21,),
                 Constant.labelText("Group name"),
-                SizedBox(
-                  height: 36,
-                  child: TextFormField(
-                    style: GoogleFonts.poppins(fontSize: 12,fontWeight: FontWeight.w400,color:const Color(0xFF6C6C6C) ),
-                    cursorColor: Colors.grey,
-                    cursorWidth: 1,
-                    decoration: InputDecoration(
-                      hintText: "Enter group name",
-                      hintStyle: GoogleFonts.poppins(
-                          fontWeight: FontWeight.w400, fontSize: 12),
-                      contentPadding:
-                      const EdgeInsets.symmetric(horizontal: 16),
-                      fillColor: Colors.white,
-                      filled: true,
-                      enabledBorder: OutlineInputBorder(
-                        borderSide: const BorderSide(
-                          width: 0.5,
-                          color: Colors.black,
-                        ),
-                        borderRadius: BorderRadius.circular(19),
-                      ),
-                      focusedBorder: OutlineInputBorder(
-                        borderSide: const BorderSide(
-                          width: 0.5,
-                          color: Colors.black,
-                        ),
-                        borderRadius: BorderRadius.circular(19),
-                      ),
-                    ),
-                  ),
-                ),
+                Constant.textField(groupNameController, "Enter group name"),
                 Padding(
                   padding: const EdgeInsets.only(bottom: 10,top: 10,right: 15),
                   child: Row(

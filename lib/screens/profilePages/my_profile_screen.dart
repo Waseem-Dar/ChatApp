@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:chat_app/screens/profilePages/delete_account_screen.dart';
 import 'package:chat_app/widgets/constant.dart';
 import 'package:chat_app/widgets/textField_widget.dart';
@@ -10,6 +12,8 @@ class MyProfileScreen extends StatefulWidget {
   @override
   State<MyProfileScreen> createState() => _MyProfileScreenState();
 }
+TextEditingController firstNameController = TextEditingController();
+TextEditingController lastNameController = TextEditingController();
 
 class _MyProfileScreenState extends State<MyProfileScreen> {
   @override
@@ -55,71 +59,10 @@ class _MyProfileScreenState extends State<MyProfileScreen> {
                     child: Text("Edit your Profile",style: GoogleFonts.poppins( fontWeight: FontWeight.w500,fontSize: 12,color: const Color(0xFF5C90DC)),)),
                 const SizedBox(height: 10,),
                 Constant.labelText("First Name"),
-                SizedBox(
-                  height: 36,
-                  child: TextFormField(
-                    style: GoogleFonts.poppins(fontSize: 12,fontWeight: FontWeight.w400,color:const Color(0xFF6C6C6C) ),
-                    cursorColor: Colors.grey,
-                    cursorWidth: 1,
-                    decoration: InputDecoration(
-                      hintText: "Lorem",
-                      hintStyle: GoogleFonts.poppins(
-                          fontWeight: FontWeight.w400, fontSize: 12),
-                      contentPadding:
-                      const EdgeInsets.symmetric(horizontal: 16),
-                      fillColor: Colors.white,
-                      filled: true,
-                      enabledBorder: OutlineInputBorder(
-                        borderSide: const BorderSide(
-                          width: 0.5,
-                          color: Colors.black,
-                        ),
-                        borderRadius: BorderRadius.circular(19),
-                      ),
-                      focusedBorder: OutlineInputBorder(
-                        borderSide: const BorderSide(
-                          width: 0.5,
-                          color: Colors.black,
-                        ),
-                        borderRadius: BorderRadius.circular(19),
-                      ),
-                    ),
-                  ),
-                ),
+                Constant.textField(firstNameController, "First Name"),
                 const SizedBox(height: 15,),
                 Constant.labelText("Last Name"),
-                SizedBox(
-                  height: 36,
-                  child: TextFormField(
-                    style: GoogleFonts.poppins(fontSize: 12,fontWeight: FontWeight.w400,color:const Color(0xFF6C6C6C) ),
-                    cursorColor: Colors.grey,
-                    cursorWidth: 1,
-                    decoration: InputDecoration(
-                      hintText: "Ipsum",
-                      hintStyle: GoogleFonts.poppins(
-                          fontWeight: FontWeight.w400, fontSize: 12),
-                      contentPadding:
-                      const EdgeInsets.symmetric(horizontal: 16),
-                      fillColor: Colors.white,
-                      filled: true,
-                      enabledBorder: OutlineInputBorder(
-                        borderSide: const BorderSide(
-                          width: 0.5,
-                          color: Colors.black,
-                        ),
-                        borderRadius: BorderRadius.circular(19),
-                      ),
-                      focusedBorder: OutlineInputBorder(
-                        borderSide: const BorderSide(
-                          width: 0.5,
-                          color: Colors.black,
-                        ),
-                        borderRadius: BorderRadius.circular(19),
-                      ),
-
-                    ),
-                  ),
-                ),
+               Constant.textField(lastNameController, "Last Name"),
                 const SizedBox(height: 10,),
                 Constant.labelText("Email Address"),
                 const TextFieldWidget(hintText: "LoremIpsum001@gamil.com"),
@@ -127,21 +70,7 @@ class _MyProfileScreenState extends State<MyProfileScreen> {
                 Constant.labelText("Phone No"),
                 const TextFieldWidget(hintText: "+92 3311231234"),
                 const SizedBox(height: 31,),
-                InkWell(
-                  onTap: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => const DeleteAccountScreen(),));
-                  },
-                  borderRadius: BorderRadius.circular(19),
-                  child: Container(
-                    width: 174,
-                    height: 36,
-                    decoration: BoxDecoration(
-                        color:  Colors.white,
-                        borderRadius: BorderRadius.circular(19)
-                    ),
-                    child: Center(child: Text("Delete Account",style: GoogleFonts.poppins(fontWeight: FontWeight.w400,fontSize: 12, color: const Color(0xFFFF0000)),textAlign: TextAlign.center,)),
-                  ),
-                ),
+                Constant.mainButton(() {}, "Delete Account", Colors.white, const Color(0xFFFF0000), 12)
               ],            //last
             ),
           ),

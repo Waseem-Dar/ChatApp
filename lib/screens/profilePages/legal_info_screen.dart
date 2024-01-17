@@ -51,11 +51,7 @@ class LegalInfoScreen extends StatelessWidget {
                       trailing: const Icon(Icons.arrow_forward_ios_sharp,color: Color(0xFF0D4A64),size: 15,),
                     ),
                   ),
-                  const Divider(
-                    indent: 5,
-                    color: Color(0x49929292),
-                    height: 0,
-                  ),
+                  const Divider(indent: 5, color: Color(0x49929292), height: 0,),
                   SizedBox(
                     height: 69,
                     child: ListTile(

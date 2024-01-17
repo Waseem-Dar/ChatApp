@@ -1,5 +1,4 @@
-
-import 'package:flutter/material.dart';
+ import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
@@ -24,39 +23,12 @@ class Constant{
   ];
 
   static List<Map<String, dynamic>> allUser = [
-    {
-      "name": "Alice Burger",
-      "msg": "Hello there!",
-      "time": "09:30",
-      "image":"assets/images/menImage.png"
-    },
-    {
-      "name": "Bob Lal",
-      "msg": "Hi, how are you?",
-      "time": "15:20",
-      "image":"assets/images/menImage.png"
-    },
-    {
-      "name": "Charlie Cheap",
-      "msg": "Good morning!",
-      "time": "08:45",
-      "image":"assets/images/menImage.png"
-    },
-    {
-      "name": "David Warner",
-      "msg": "What's up?",
-      "time": "12:10",
-      "image":"assets/images/menImage.png"
-    },
-    {
-      "name": "Emma Adian",
-      "msg": "See you later! Thank You",
-      "time": "17:55",
-      "image":"assets/images/menImage.png"
-    }
+    {"name": "Alice Burger", "msg": "Hello there!", "time": "09:30", "image":"assets/images/menImage.png"},
+    {"name": "Bob Lal", "msg": "Hi, how are you?", "time": "15:20", "image":"assets/images/menImage.png"},
+    {"name": "Charlie Cheap", "msg": "Good morning!", "time": "08:45", "image":"assets/images/menImage.png"},
+    {"name": "David Warner", "msg": "What's up?", "time": "12:10", "image":"assets/images/menImage.png"},
+    {"name": "Emma Adian", "msg": "See you later! Thank You", "time": "17:55", "image":"assets/images/menImage.png"}
   ];
-
-
 
   static Widget labelText(String label){
     return Container(
@@ -73,8 +45,59 @@ class Constant{
     );
   }
 
-}
+  static Widget textField(TextEditingController controller,String hintText){
+    return SizedBox(
+      height: 36,
+      child: TextFormField(
+        controller: controller,
+        style: GoogleFonts.poppins(
+            fontWeight: FontWeight.w400,fontSize: 12,color: const Color(0xFF6C6C6C)),
+        cursorColor: Colors.grey,
+        cursorWidth: 1,
+        decoration: InputDecoration(
+            hintText: hintText,
+            hintStyle: GoogleFonts.poppins(
+                fontWeight: FontWeight.w400, fontSize: 12),
+            contentPadding:
+            const EdgeInsets.symmetric(horizontal: 16),
+            fillColor: Colors.white,
+            filled: true,
+            enabledBorder: OutlineInputBorder(
+              borderSide: const BorderSide(
+                width: 0.5,
+                color: Colors.black,
+              ),
+              borderRadius: BorderRadius.circular(19),
+            ),
+            focusedBorder: OutlineInputBorder(
+              borderSide: const BorderSide(
+                width: 0.5,
+                color: Colors.black,
+              ),
+              borderRadius: BorderRadius.circular(19),
+            )
+      ),
+      ),
+    );
+  }
 
+  static Widget mainButton(VoidCallback onTap,String text,Color backGround,Color textColor,double fontSize,){
+    return InkWell(
+      borderRadius: BorderRadius.circular(25),
+      onTap: onTap,
+      child: Container(
+        width: 174,
+        height: 36,
+        decoration: BoxDecoration(
+            color: backGround,
+            borderRadius: BorderRadius.circular(25)
+        ),
+        child: Center(child: Text(text,style: GoogleFonts.poppins(fontWeight: FontWeight.w400,fontSize: fontSize,color: textColor),)),
+      ),
+    );
+  }
+
+}
 
 class Place {
   String name;

@@ -9,7 +9,6 @@ class UsersScreen extends StatefulWidget {
   @override
   State<UsersScreen> createState() => _UsersScreenState();
 }
-
                  // return stream dummy JsonData
 Stream<List<Map<String, dynamic>>> getUserStream() async* {
 
@@ -99,7 +98,6 @@ class _UsersScreenState extends State<UsersScreen> {
                         ],
                       ),
                       const SizedBox(height: 20,),
-
                     ],
                   ),
                 ),
@@ -125,7 +123,6 @@ class _UsersScreenState extends State<UsersScreen> {
                             child: ListView.builder(
                               physics: const BouncingScrollPhysics(),
                               padding: const EdgeInsets.only(top: 44),
-
                               itemCount: snapshot.data!.length,
                               itemBuilder: (context, index) {
                                 final user = snapshot.data![index];

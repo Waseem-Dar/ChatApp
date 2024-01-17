@@ -28,7 +28,6 @@ class TermsDetailsScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     IconButton(
-
                         onPressed: (){
                           Navigator.pop(context);
                         }, icon: const Icon(Icons.arrow_back_ios_new_outlined,size: 20,)),
@@ -107,7 +106,6 @@ class TermsDetailsScreen extends StatelessWidget {
                         child: Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
                           style: GoogleFonts.poppins(fontSize: 12,fontWeight: FontWeight.w400,color: const Color(0xFF6C6C6C)),textAlign: TextAlign.justify,),),),],),
                 const SizedBox(height: 20,),
-
               ],
             ),
           ),

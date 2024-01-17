@@ -16,7 +16,6 @@ class _MessageCardState extends State<MessageCard> {
   }
 }
 
-
 Widget greenMessage(){
   return Padding(
     padding: const EdgeInsets.symmetric(vertical: 5),

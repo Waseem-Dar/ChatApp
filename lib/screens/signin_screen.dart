@@ -4,11 +4,18 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../main.dart';
 
-class SignInScreen extends StatelessWidget {
+class SignInScreen extends StatefulWidget {
   const SignInScreen({super.key});
+
+  @override
+  State<SignInScreen> createState() => _SignInScreenState();
+}
+bool checkBox = true;
+TextEditingController nameController = TextEditingController();
+
+class _SignInScreenState extends State<SignInScreen> {
   @override
   Widget build(BuildContext context) {
-     bool? checkBox = true;
     mq = MediaQuery.of(context).size;
     return GestureDetector(
       onTap: () => FocusScope.of(context).unfocus(),
@@ -27,54 +34,15 @@ class SignInScreen extends StatelessWidget {
               padding: const EdgeInsets.only(left: 24, right: 24, top: 33),
               child: Column(
                 children: [
-                  Text(
-                    "Sign In",
-                    style: GoogleFonts.poppins(
-                      fontWeight: FontWeight.w500,
-                      fontSize: 20,
-                      color: Colors.black,
+                  Text("Sign In", style: GoogleFonts.poppins(
+                      fontWeight: FontWeight.w500, fontSize: 20, color: Colors.black,
                     ),
                     textAlign: TextAlign.center,
                   ),
-                  const SizedBox(
-                    height: 60,
-                  ),
+                  const SizedBox(height: 60,),
                    Constant.labelText("Email"),
-              SizedBox(
-                height: 36,
-                child: TextFormField(
-                  style: GoogleFonts.poppins(
-                    fontWeight: FontWeight.w400,fontSize: 12,color: const Color(0xFF6C6C6C)
-                  ),
-                  cursorColor: Colors.grey,
-                  cursorWidth: 1,
-                  decoration: InputDecoration(
-                      hintText: "email",
-                      hintStyle: GoogleFonts.poppins(
-                          fontWeight: FontWeight.w400, fontSize: 12),
-                      contentPadding:
-                      const EdgeInsets.symmetric(horizontal: 16),
-                      fillColor: Colors.white,
-                      filled: true,
-                      enabledBorder: OutlineInputBorder(
-                        borderSide: const BorderSide(
-                          width: 0.5,
-                          color: Colors.black,
-                        ),
-                        borderRadius: BorderRadius.circular(19),
-                      ),
-                      focusedBorder: OutlineInputBorder(
-                        borderSide: const BorderSide(
-                          width: 0.5,
-                          color: Colors.black,
-                        ),
-                        borderRadius: BorderRadius.circular(19),
-                      )),
-                ),
-              ),
-                  const SizedBox(
-                    height: 10,
-                  ),
+              Constant.textField(nameController, "name"),
+                  const SizedBox(height: 10,),
                   Constant.labelText("Password"),
                   SizedBox(
                     height: 36,
@@ -109,7 +77,6 @@ class SignInScreen extends StatelessWidget {
                             margin: const EdgeInsets.all(10),
                             width: 30,
                               decoration: const BoxDecoration(
-                                // color: Colors.red,
                                 image: DecorationImage(image: AssetImage("assets/images/hide.jpg",),),),),
                           ),
                     ),
@@ -124,7 +91,8 @@ class SignInScreen extends StatelessWidget {
                           visualDensity: const VisualDensity(horizontal: -4,vertical: -4),
                           fillColor: const MaterialStatePropertyAll(Color(0xFF595959)),
                           value:checkBox , onChanged: (newValue) {
-                          checkBox = newValue;
+                          checkBox = newValue!;
+                          setState(() {});
                         },),
                       ),
                       Text("Remember me",style: GoogleFonts.poppins(fontSize: 11),),
@@ -140,7 +108,9 @@ class SignInScreen extends StatelessWidget {
                   const SizedBox(height: 35,),
                   InkWell(
                     borderRadius: BorderRadius.circular(25),
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => const CreateAccountScreen(),));
+                    },
                     child: Container(
                       width: 188,
                       height: 37,
@@ -172,6 +142,3 @@ class SignInScreen extends StatelessWidget {
     );
   }
 }
-
-
-

@@ -1,3 +1,6 @@
+import 'dart:developer';
+
+import 'package:chat_app/widgets/constant.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -56,21 +59,7 @@ class _DeleteAccountScreenState extends State<DeleteAccountScreen> {
               ],
             ),
             const SizedBox(height: 15,),
-            InkWell(
-              onTap: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => const DeleteAccountScreen(),));
-              },
-              borderRadius: BorderRadius.circular(25),
-              child: Container(
-                width: 174,
-                height: 36,
-                decoration: BoxDecoration(
-                    color:  Colors.white,
-                    borderRadius: BorderRadius.circular(25)
-                ),
-                child: Center(child: Text("Delete Account",style: GoogleFonts.poppins(fontWeight: FontWeight.w400,fontSize: 12, color: const Color(0xFFFF0000)),textAlign: TextAlign.center,)),
-              ),
-            ),
+            Constant.mainButton(() {}, "Delete Account", Colors.white, const Color(0xFFFF0000), 12)
           ],
         ),
       ),

@@ -45,9 +45,7 @@ class _InfluencerScreenState extends State<InfluencerScreen> {
                     const SizedBox(height: 91,),
                     Text('Influence',style: GoogleFonts.poppins(fontWeight: FontWeight.w600,fontSize: 32,color: Colors.white),
                     ),
-
                     const SizedBox(height: 17,),
-
                   ],
                 ),
               ),
@@ -71,7 +69,6 @@ class _InfluencerScreenState extends State<InfluencerScreen> {
                       String subTitle = list["subTitle"];
                       String image = list["image"];
                      return Container(
-                       // height: 55,
                        margin: const EdgeInsets.only(bottom: 6),
                        decoration: BoxDecoration(
                        color: Colors.white,

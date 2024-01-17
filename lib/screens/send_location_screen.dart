@@ -17,14 +17,12 @@ int selectedIndex = -1;
 class _SendLocationScreenState extends State<SendLocationScreen> {
 
   LatLng _desiredLocation = const LatLng(33.6881665, 73.1758258);
-  // late LatLng _desiredLocation;
 
   @override
   void initState() {
     super.initState();
     _desiredLocation = widget.latLng;
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -62,7 +60,7 @@ class _SendLocationScreenState extends State<SendLocationScreen> {
                     zoomControlsEnabled: false,
                     initialCameraPosition: CameraPosition(
                       target: _desiredLocation,
-                      zoom: 15.0,
+                      zoom: 16.0,
                     ),
                     markers: {
                       Marker(
@@ -192,7 +190,7 @@ class _SendLocationScreenState extends State<SendLocationScreen> {
                 ),
                 const SizedBox(height: 20,)
               ],
-                    ),
+              ),
             );
           }
         );

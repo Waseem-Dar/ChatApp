@@ -19,7 +19,6 @@ class _MyContactsScreenState extends State<MyContactsScreen> {
       backgroundColor: const Color(0xFFF2F7FA),
       body: SingleChildScrollView(
         physics: const BouncingScrollPhysics(),
-
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 24.5),
           child: Column(
@@ -36,7 +35,6 @@ class _MyContactsScreenState extends State<MyContactsScreen> {
                   Text("My Contacts",style: GoogleFonts.poppins(
                       fontWeight: FontWeight.w500,fontSize: 20,color: Colors.black),textAlign: TextAlign.center,),
                  InkWell(
-
                    borderRadius: BorderRadius.circular(12),
                    overlayColor: const MaterialStatePropertyAll(Colors.transparent),
                    onTap: () {
@@ -58,9 +56,7 @@ class _MyContactsScreenState extends State<MyContactsScreen> {
               const SizedBox(height: 40,),
               SizedBox(
                   height: 36,
-                  // width: 174,
                 child: ElevatedButton(
-
                     onPressed: (){
                       _showDialog();
                     },
@@ -83,7 +79,6 @@ class _MyContactsScreenState extends State<MyContactsScreen> {
               ),
               const SizedBox(height: 10,),
               FlutterToggleTab(
-
                 width: 51,
                 borderRadius: 30,
                 height: 30,
@@ -100,7 +95,6 @@ class _MyContactsScreenState extends State<MyContactsScreen> {
                 },
                 isScroll:false,
               ),
-
               _tabTextIndexSelected ==  0 ?Container(
                 margin: const EdgeInsets.only(top: 20,bottom: 27),
                 width: double.infinity,
@@ -265,7 +259,6 @@ class _MyContactsScreenState extends State<MyContactsScreen> {
     );
   }
 
-
   void _showDialog(){
     showDialog(
         context: context, builder: (_) => AlertDialog(
@@ -291,7 +284,6 @@ class _MyContactsScreenState extends State<MyContactsScreen> {
               TextSpan(
                 text: "Help Button",style: GoogleFonts.poppins(
                   fontSize: 12,fontWeight: FontWeight.w400,color: const Color(0xFF5C90DC)),),
-
             ]
           )),
           const SizedBox(height: 10,),

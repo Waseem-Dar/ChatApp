@@ -49,7 +49,7 @@ class _MyPlacesScreenState extends State<MyPlacesScreen> {
                     borderRadius: BorderRadius.circular(12),
                     overlayColor: const MaterialStatePropertyAll(Colors.transparent),
                     onTap: () {
-                      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const AddPlaceScreen(),));
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => const AddPlaceScreen(),));
                     },
                     child: Container(
                       margin: const EdgeInsets.symmetric(horizontal: 10),
@@ -98,7 +98,7 @@ class _MyPlacesScreenState extends State<MyPlacesScreen> {
                           padding: const EdgeInsets.only(bottom: 6),
                           child: ListTile(
                             onTap: () {
-                                Navigator.pushReplacement(
+                                Navigator.push(
                                   context,
                                   MaterialPageRoute(
                                     builder: (context) => DeletePlaceScreen(
