@@ -1,4 +1,3 @@
-import 'package:chat_app/screens/profilePages/new_message_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_toggle_tab/flutter_toggle_tab.dart';
@@ -37,9 +36,7 @@ class _MyContactsScreenState extends State<MyContactsScreen> {
                  InkWell(
                    borderRadius: BorderRadius.circular(12),
                    overlayColor: const MaterialStatePropertyAll(Colors.transparent),
-                   onTap: () {
-                     Navigator.push(context, MaterialPageRoute(builder: (context) => const  NewMessageScreen(),));
-                   },
+                   onTap: () {},
                    child: Container(
                      margin: const EdgeInsets.symmetric(horizontal: 10),
                      height: 24,
@@ -127,7 +124,7 @@ class _MyContactsScreenState extends State<MyContactsScreen> {
                             children: [
                               InkWell(
                                 onTap:() {
-                                  Constant.showToast("Request Rejected");
+                                  Constant.showToast("     Request Rejected     ");
                                 },
                                 child: Container(
                                   padding: const EdgeInsets.all(1),
@@ -142,16 +139,17 @@ class _MyContactsScreenState extends State<MyContactsScreen> {
                               ),
                               InkWell(
                                 onTap:() {
-                                  Constant.showToast("Request Accepted");
+                                  Constant.showToast("     Request Accepted     ");
                                 },
                                 child: Container(
-                                  padding: const EdgeInsets.all(3),
+                                  padding: const EdgeInsets.all(4),
                                   height: 18,
                                   width: 18,
-                                  decoration: const ShapeDecoration(
-                                    shape:OvalBorder(side: BorderSide(color: Color(0xFF6C6C6C)),),
-                                  ),
-                                  child: const ImageIcon(AssetImage("assets/images/checkIcon.png")),
+                                    decoration:BoxDecoration(
+                                    color:const Color(0xFF0D4A64),
+                                     borderRadius: BorderRadius.circular(10)
+                                    ),
+                                  child: const ImageIcon(AssetImage("assets/images/checkIcon.png",),color: Colors.white ,),
                                 ),
                               )
                             ],
@@ -237,12 +235,12 @@ class _MyContactsScreenState extends State<MyContactsScreen> {
                               height: 14,
                               decoration: ShapeDecoration(
                                 shape: RoundedRectangleBorder(
-                                  side: const BorderSide(width: 0.50, color: Color(0xFF6C6C6C)),
+                                  side: const BorderSide(width: 0.50, color: Color(0xFF0D4A64)),
                                   borderRadius: BorderRadius.circular(5.50),
                                 ),
                               ),
                               child: Center(child: Text("Request Sent",style: GoogleFonts.poppins(
-                                fontWeight: FontWeight.w400,fontSize: 8,color: const Color(0xFF6C6C6C),),textAlign: TextAlign.center,)),
+                                fontWeight: FontWeight.w400,fontSize: 8,color: const Color(0xFF0D4A64),),textAlign: TextAlign.center,)),
                             ),
                           ),
                         ),

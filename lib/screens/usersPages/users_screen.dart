@@ -3,6 +3,8 @@ import 'package:chat_app/widgets/constant.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../profilePages/new_message_screen.dart';
+
 class UsersScreen extends StatefulWidget {
   const UsersScreen({super.key});
 
@@ -25,7 +27,9 @@ class _UsersScreenState extends State<UsersScreen> {
         floatingActionButton: Padding(
           padding: const EdgeInsets.only(right: 20),
           child: FloatingActionButton(
-              onPressed: (){},
+              onPressed: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context) => const  NewMessageScreen(),));
+              },
             shape: const StadiumBorder(),
             backgroundColor: const Color(0xFF0D4A64),
           child: const ImageIcon(AssetImage("assets/images/addUserIcon.png"),color: Colors.white,),
@@ -84,7 +88,6 @@ class _UsersScreenState extends State<UsersScreen> {
                                       AssetImage("assets/images/searchIcon.png"),color: Colors.white,),
                                   ),
                                   prefixIconConstraints: const BoxConstraints(minWidth: 20),
-
                                 ),
                               ),
                             ),
@@ -119,8 +122,8 @@ class _UsersScreenState extends State<UsersScreen> {
                         return  Center(child: Text("No chats yet",style: GoogleFonts.poppins(fontSize: 16,fontWeight: FontWeight.w400,color: const Color(0xFF6C6C6C)),),);
                       }else{
                         return Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 40),
-                            child: ListView.builder(
+                           padding: const EdgeInsets.symmetric(horizontal: 40),
+                           child: ListView.builder(
                               physics: const BouncingScrollPhysics(),
                               padding: const EdgeInsets.only(top: 44),
                               itemCount: snapshot.data!.length,
@@ -144,8 +147,8 @@ class _UsersScreenState extends State<UsersScreen> {
                                           mainAxisAlignment: MainAxisAlignment.start,
                                           children: [
                                             SizedBox(
-                                                width:40,
-                                                child:  Text(user["time"].toString(),style: GoogleFonts.poppins(fontWeight: FontWeight.w500,fontSize: 11,color: const Color(0xFF929292)),textAlign: TextAlign.center,)),
+                                              width:40,
+                                              child:  Text(user["time"].toString(),style: GoogleFonts.poppins(fontWeight: FontWeight.w500,fontSize: 11,color: const Color(0xFF929292)),textAlign: TextAlign.center,)),
                                             Container(
                                               margin:const EdgeInsets.only(top: 5),
                                               width: 17,

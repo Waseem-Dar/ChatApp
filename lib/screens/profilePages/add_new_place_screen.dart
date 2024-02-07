@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
+import '../../widgets/user_widgets.dart';
+
 class AddPlaceScreen extends StatefulWidget {
   const AddPlaceScreen({super.key});
 
@@ -64,13 +66,13 @@ class _AddPlaceScreenState extends State<AddPlaceScreen> {
              padding: const EdgeInsets.symmetric(horizontal: 25),
              child: Column(
                children: [
-                 Constant.labelText("Name your place"),
-                 Constant.textField(nameController, "e.g Home"),
+                 UserWidget.labelText("Name your place"),
+                 UserWidget.textField(nameController, "e.g Home"),
                ],
              ),
            ),
            const SizedBox(height: 35,),
-           Constant.mainButton( () {
+           UserWidget.mainButton( () {
              log("click");
              if(_selectedLocation != null){
               final place = Place(name: nameController.text.toString(), latLng: _selectedLocation!);

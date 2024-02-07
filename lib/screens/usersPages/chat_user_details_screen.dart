@@ -3,12 +3,15 @@ import 'package:chat_app/widgets/textField_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../../widgets/user_widgets.dart';
+
 class ChatUserDetailsScreen extends StatefulWidget {
   const ChatUserDetailsScreen({super.key});
 
   @override
   State<ChatUserDetailsScreen> createState() => _ChatUserDetailsScreenState();
 }
+TextEditingController phoneNoController = TextEditingController(text: "+92 3321231231");
 
 class _ChatUserDetailsScreenState extends State<ChatUserDetailsScreen> {
   @override
@@ -47,8 +50,25 @@ class _ChatUserDetailsScreenState extends State<ChatUserDetailsScreen> {
                 Text("Lorem Ipsum",style: GoogleFonts.poppins(fontSize:17,fontWeight: FontWeight.w500,color: const Color(0xFF0D4A64),),),
                 Text("@Loremipsum001",style: GoogleFonts.poppins( fontWeight: FontWeight.w500,fontSize: 12,color: const Color(0xFF5C90DC)),),
                 const SizedBox(height: 20,),
-                Constant.labelText("Phone No"),
-                const TextFieldWidget(hintText: "+92 3321231231"),
+                UserWidget.labelText("Phone No"),
+            SizedBox(
+              height: 36,
+              child: TextFormField(
+                  controller: phoneNoController,
+                  style: GoogleFonts.poppins(
+                    fontWeight: FontWeight.w400,fontSize: 12,
+                  ),
+                  cursorColor: Colors.grey,
+                  cursorWidth: 1,
+                  decoration: InputDecoration(
+                      contentPadding:
+                      const EdgeInsets.symmetric(horizontal: 16),
+                      fillColor: Colors.white,
+                      filled: true,
+                      border: OutlineInputBorder(borderRadius: BorderRadius.circular(19),borderSide: BorderSide.none)
+                  )
+              ),
+            ),
                 const SizedBox(height: 12,),
                 SizedBox(
                   height: 36,
@@ -94,7 +114,9 @@ class _ChatUserDetailsScreenState extends State<ChatUserDetailsScreen> {
                   ),
                 ),
                    const SizedBox(height: 13,),
-                Constant.mainButton(() {}, "Delete Account", Colors.white, const Color(0xFFFF0000), 12)
+                UserWidget.mainButton(() {
+                  showDeleteDialog();
+                }, "Delete Account", Colors.white, const Color(0xFFFF0000), 12)
               ],
             ),
           ),
@@ -118,17 +140,18 @@ void showDeleteDialog(){
         const SizedBox(height: 15,),
         const Divider(
           height:1,
-          color: Color(0x49929292),
+          color: Color(0xFF939393),
         ),
       ],
     ),
     actionsPadding:  EdgeInsets.zero,
     actionsAlignment: MainAxisAlignment.spaceEvenly,
     actions: [
-      TextButton(onPressed: (){
+      TextButton(
+          onPressed: (){
         Navigator.pop(context);
       }, child: Text("Yes",style: GoogleFonts.poppins(fontWeight: FontWeight.w500,fontSize: 15,color: const Color(0xFF5C90DC)),)),
-         const SizedBox(height:50,child: VerticalDivider(color: Color(0x49929292),width: 1,endIndent: 15,)),
+         const SizedBox(height:50,child: VerticalDivider(color: Color(0xFF939393),width: 1,endIndent: 15,)),
       TextButton(onPressed: (){
         Navigator.pop(context);
       }, child: Text("No",style: GoogleFonts.poppins(fontWeight: FontWeight.w500,fontSize: 15,color: const Color(0xFF5C90DC)),))

@@ -5,6 +5,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:location/location.dart';
 
+import 'contact_share_location_screen.dart';
+
 class LocationScreen extends StatefulWidget {
   final void Function(LatLng)? onLocationSelected;
   const LocationScreen({super.key,this.onLocationSelected});
@@ -189,7 +191,7 @@ class _LocationScreenState extends State<LocationScreen> {
         floatingActionButton: Container(
           margin:const EdgeInsets.only(bottom: 12),
           height: 40,
-          width: isExpanded?220:40,
+          width: isExpanded?null:40,
           child: FloatingActionButton.extended(
             onPressed: () {
               setState(() {
@@ -198,20 +200,20 @@ class _LocationScreenState extends State<LocationScreen> {
             },
             shape: const StadiumBorder(),
             backgroundColor:const Color(0xFF0D4A64),
-            icon:  const Padding(
-              padding: EdgeInsets.only(left: 10),
-              child: ImageIcon(AssetImage("assets/images/shareLocationIcon.png"),color: Colors.white,size: 20,),
+            icon:   Padding(
+              padding:isExpanded?EdgeInsets.zero: const EdgeInsets.only(left: 10),
+              child: const ImageIcon(AssetImage("assets/images/shareLocationIcon.png"),color: Colors.white,size: 20,),
             ),
             label:isExpanded ? InkWell(
               overlayColor: const MaterialStatePropertyAll(Colors.transparent),
               onTap: () async{
-                Navigator.push(context, MaterialPageRoute(builder: (context) => SendLocationScreen(latLng:userCurrentLocation),));
+                Navigator.push(context, MaterialPageRoute(builder: (context) => ContactShareLocationScreen(latLng:userCurrentLocation),));
               },
               child: AnimatedContainer(
                 height: 40,
                 duration: const Duration(milliseconds: 300),
                 child: Center(
-                  child: Text(' Share my location with my Spher ',
+                  child: Text('Share my location with my Spher',
                     style: GoogleFonts.inter(fontWeight: FontWeight.w500,fontSize: 12,color: Colors.white),
                   ),
                 ),

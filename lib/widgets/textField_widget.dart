@@ -3,13 +3,15 @@ import 'package:google_fonts/google_fonts.dart';
 
 class TextFieldWidget extends StatelessWidget {
   final String hintText;
-  const TextFieldWidget({super.key,required this.hintText});
+  final TextEditingController controller;
+  const TextFieldWidget({super.key,required this.hintText,required this.controller});
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       height: 36,
       child: TextFormField(
+        controller: controller,
         style: GoogleFonts.poppins(
           fontWeight: FontWeight.w400,fontSize: 12,
         ),

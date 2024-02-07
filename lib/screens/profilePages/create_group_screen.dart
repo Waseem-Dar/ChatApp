@@ -2,6 +2,8 @@ import 'package:chat_app/widgets/constant.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../../widgets/user_widgets.dart';
+
 class CreateGroupScreen extends StatefulWidget {
   const CreateGroupScreen({super.key});
 
@@ -20,7 +22,7 @@ class _CreateGroupScreenState extends State<CreateGroupScreen> {
       child: Scaffold(
         backgroundColor: const Color(0xFFF2F7FA),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-        floatingActionButton: Constant.mainButton( () {},
+        floatingActionButton: UserWidget.mainButton( () {},
             "Continue",const Color(0xFF0D4A64), Colors.white, 12),
         body: SingleChildScrollView(
           child: Padding(
@@ -39,8 +41,8 @@ class _CreateGroupScreenState extends State<CreateGroupScreen> {
                   ],
                 ),
                 const SizedBox(height: 21,),
-                Constant.labelText("Group name"),
-                Constant.textField(groupNameController, "Enter group name"),
+                UserWidget.labelText("Group name"),
+                UserWidget.textField(groupNameController, "Enter group name"),
                 Padding(
                   padding: const EdgeInsets.only(bottom: 10,top: 10,right: 15),
                   child: Row(

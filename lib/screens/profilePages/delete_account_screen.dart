@@ -4,6 +4,8 @@ import 'package:chat_app/widgets/constant.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../../widgets/user_widgets.dart';
+
 class DeleteAccountScreen extends StatefulWidget {
   const DeleteAccountScreen({super.key});
 
@@ -59,7 +61,7 @@ class _DeleteAccountScreenState extends State<DeleteAccountScreen> {
               ],
             ),
             const SizedBox(height: 15,),
-            Constant.mainButton(() {}, "Delete Account", Colors.white, const Color(0xFFFF0000), 12)
+            UserWidget.mainButton(() {}, "Delete Account", Colors.white, const Color(0xFFFF0000), 12)
           ],
         ),
       ),

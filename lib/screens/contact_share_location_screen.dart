@@ -1,9 +1,14 @@
+import 'package:chat_app/screens/send_location_screen.dart';
 import 'package:chat_app/widgets/constant.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
+
+import '../widgets/user_widgets.dart';
 
 class ContactShareLocationScreen extends StatefulWidget {
-  const ContactShareLocationScreen({super.key});
+  final LatLng latLng;
+  const ContactShareLocationScreen({super.key,required this.latLng});
 
   @override
   State<ContactShareLocationScreen> createState() => _ContactShareLocationScreenState();
@@ -18,7 +23,9 @@ class _ContactShareLocationScreenState extends State<ContactShareLocationScreen>
     return Scaffold(
       backgroundColor: const Color(0xFFF2F7FA),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-      floatingActionButton: Constant.mainButton( () {},
+      floatingActionButton: UserWidget.mainButton( () {
+        Navigator.push(context, MaterialPageRoute(builder: (context) => SendLocationScreen( latLng: widget.latLng,),));
+      },
           "Continue",const Color(0xFF0D4A64), Colors.white, 12),
       body: SingleChildScrollView(
         child: Padding(
@@ -32,7 +39,7 @@ class _ContactShareLocationScreenState extends State<ContactShareLocationScreen>
                   IconButton(onPressed: (){
                     Navigator.pop(context);
                   }, icon: const Icon(Icons.arrow_back_ios_outlined,size: 20,)),
-                  Text("Create new group",style: GoogleFonts.poppins(fontSize: 20,fontWeight: FontWeight.w500),),
+                  Text("Select Contacts",style: GoogleFonts.poppins(fontSize: 20,fontWeight: FontWeight.w500),),
                   const SizedBox(width: 30,),
                 ],
               ),

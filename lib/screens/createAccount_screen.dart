@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:country_picker/country_picker.dart';
 
+import '../widgets/user_widgets.dart';
+
 class CreateAccountScreen extends StatefulWidget {
   const CreateAccountScreen({super.key});
 
@@ -12,6 +14,13 @@ class CreateAccountScreen extends StatefulWidget {
   State<CreateAccountScreen> createState() => _CreateAccountScreenState();
 }
 TextEditingController countryController = TextEditingController(text: "");
+TextEditingController firstNameController = TextEditingController();
+TextEditingController lastNameController = TextEditingController();
+TextEditingController userNameController = TextEditingController();
+TextEditingController emailController = TextEditingController();
+TextEditingController phoneNoController = TextEditingController();
+TextEditingController passwordController = TextEditingController();
+TextEditingController confirmPasswordController = TextEditingController();
 
  String countryPhoneCode = "92";
 
@@ -44,19 +53,19 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                   ],
                 ),
                 const SizedBox(height: 40,),
-                Constant.labelText("First Name"),
-                const TextFieldWidget(hintText: "Enter your first name"),
+                UserWidget.labelText("First Name"),
+                TextFieldWidget(hintText: "Enter your first name",controller: firstNameController),
                 const SizedBox(height: 10,),
-                Constant.labelText("Last Name"),
-                const TextFieldWidget(hintText: "Enter your last name"),
+                UserWidget.labelText("Last Name"),
+                TextFieldWidget(hintText: "Enter your last name",controller: lastNameController),
                 const SizedBox(height: 10,),
-                Constant.labelText("Username"),
-                const TextFieldWidget(hintText: "Enter your Username"),
+                UserWidget.labelText("Username"),
+                TextFieldWidget(hintText: "Enter your Username",controller: userNameController),
                 const SizedBox(height: 10,),
-                Constant.labelText("Email Address"),
-                const TextFieldWidget(hintText: "Enter your email address"),
+                UserWidget.labelText("Email Address"),
+                TextFieldWidget(hintText: "Enter your email address",controller: emailController),
                 const SizedBox(height: 10,),
-                Constant.labelText("Country"),
+                UserWidget.labelText("Country"),
                 SizedBox(
                   height: 36,
                   child: TextFormField(
@@ -103,7 +112,7 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                   ),
                 ),
                 const SizedBox(height: 10,),
-                Constant.labelText("Phone No"),
+                UserWidget.labelText("Phone No"),
                 Row(
                   children: [
                     Container(
@@ -119,15 +128,15 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                       child: Center(child: Text("+$countryPhoneCode",style: GoogleFonts.poppins(fontSize: 12,fontWeight: FontWeight.w400),),),
                     ),
                     const SizedBox(width: 6,),
-                    const Expanded(child: TextFieldWidget(hintText: "Phone no"))
+                    Expanded(child: TextFieldWidget(hintText: "Phone no",controller: phoneNoController,))
                   ],
                 ),
                 const SizedBox(height: 10,),
-                Constant.labelText("Password"),
-                const TextFieldWidget(hintText: "Enter your password"),
+                UserWidget.labelText("Password"),
+                TextFieldWidget(hintText: "Enter your password",controller: passwordController),
                 const SizedBox(height: 10,),
-                Constant.labelText("Confirm Password"),
-                const TextFieldWidget(hintText: "Confirm your password"),
+                UserWidget.labelText("Confirm Password"),
+                TextFieldWidget(hintText: "Confirm your password",controller: confirmPasswordController),
                 const SizedBox(height: 36,),
                 InkWell(
                   borderRadius: BorderRadius.circular(25),

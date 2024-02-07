@@ -126,7 +126,7 @@ class _ChatScreenState extends State<ChatScreen> {
                                   IconButton(
                                       padding:EdgeInsets.zero,
                                       visualDensity: const VisualDensity(horizontal: -4,vertical: -4),
-                                      onPressed: (){}, icon: const ImageIcon(AssetImage("assets/images/sendIcon.png"),))
+                                      onPressed: (){}, icon: const ImageIcon(AssetImage("assets/images/sendIcon.png"),size: 19,))
                                 ],
                               ),
                             ),

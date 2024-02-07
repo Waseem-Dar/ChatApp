@@ -16,7 +16,7 @@ class ProfileScreen extends StatefulWidget {
 
 //Notification Tile Switch Button status
 bool status = true;
-   // ScrollController
+// ScrollController
 final ScrollController verticalScroll = ScrollController();
 
 class _ProfileScreenState extends State<ProfileScreen> {
@@ -45,7 +45,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 child: Column(
                   children: [
                     const SizedBox(height: 91,),
-                        Text('My Spher',style: GoogleFonts.poppins(fontWeight: FontWeight.w600,fontSize: 32,color: Colors.white),),
+                    Text('My Spher',style: GoogleFonts.poppins(fontWeight: FontWeight.w600,fontSize: 32,color: Colors.white),),
                     const SizedBox(height: 17,),
                   ],
                 ),
@@ -53,12 +53,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
               Expanded(
                 child: Container(
                   clipBehavior: Clip.hardEdge,
-                    width: double.infinity,
-                    height: double.infinity,
-                    decoration: const BoxDecoration(
-                        color: Color(0xFFF2F7FA),
-                        borderRadius: BorderRadius.only(topLeft: Radius.circular(40),topRight: Radius.circular(40))
-                    ),
+                  width: double.infinity,
+                  height: double.infinity,
+                  decoration: const BoxDecoration(
+                      color: Color(0xFFF2F7FA),
+                      borderRadius: BorderRadius.only(topLeft: Radius.circular(40),topRight: Radius.circular(40))
+                  ),
                   child: Scrollbar(
                     controller: verticalScroll,
                     thickness:1 ,
@@ -78,7 +78,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           Text("Lorem Ipsum",style: GoogleFonts.poppins(fontWeight: FontWeight.w500,fontSize: 17,color: const Color(0xFF0D4A64),height: 3),),
                           SizedBox(
                             width: double.infinity,
-                             child: Text("My Profile",
+                            child: Text("My Profile",
                               style: GoogleFonts.poppins(fontWeight: FontWeight.w400, fontSize: 12, height: 2.5),),
                           ),
                           Container(
@@ -86,8 +86,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             height: 74,
                             width: double.infinity,
                             decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(19)
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(19)
                             ),
                             child: Center(
                               child: ListTile(
@@ -171,13 +171,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                       scaleX: 0.6,
                                       alignment: Alignment.centerRight,
                                       child: Switch(
-                                       activeTrackColor: const Color(0xFF0D4A64),
+                                        activeTrackColor: const Color(0xFF0D4A64),
                                         value: status,
                                         onChanged: (value) {
-                                        setState(() {
-                                          status = value;
-                                        });
-                                      },),
+                                          setState(() {
+                                            status = value;
+                                          });
+                                        },),
                                     ),
                                   ),),
                                 const Divider(indent: 5, color: Color(0x49929292), height: 0,),

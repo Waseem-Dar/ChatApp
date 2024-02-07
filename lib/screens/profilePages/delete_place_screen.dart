@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
+import '../../widgets/user_widgets.dart';
+
 class DeletePlaceScreen extends StatefulWidget {
   final LatLng latLng;
   final String placeName;
@@ -79,7 +81,7 @@ class _DeletePlaceScreenState extends State<DeletePlaceScreen> {
             ),
           ),
           const SizedBox(height: 35,),
-          Constant.mainButton(() {
+          UserWidget.mainButton(() {
               Constant.places.removeAt(widget.index);
               Navigator.pop(context);
               },

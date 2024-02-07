@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../../widgets/constant.dart';
+import '../../widgets/user_widgets.dart';
+
 class TermsDetailsScreen extends StatelessWidget {
   const TermsDetailsScreen({super.key});
 
@@ -52,59 +55,36 @@ class TermsDetailsScreen extends StatelessWidget {
                   child: Text("Last updated on January 23, 2023",style: GoogleFonts.poppins(
                       fontWeight: FontWeight.w500,fontSize: 10,color: const Color(0xFF0D4A64)),textAlign: TextAlign.left,),
                 ),
-                Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non ",
-                  style: GoogleFonts.poppins(fontSize: 12,fontWeight: FontWeight.w400,color: const Color(0xFF6C6C6C)),textAlign: TextAlign.justify,),
+                UserWidget.legalScreenText("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non "),
                 const SizedBox(height: 10,),
-                Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ",
-                  style: GoogleFonts.poppins(fontSize: 12,fontWeight: FontWeight.w400,color: const Color(0xFF6C6C6C)),textAlign: TextAlign.justify,),
+                UserWidget.legalScreenText("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation" ),
                 Container(
                   margin: const EdgeInsets.only(top: 18,bottom: 8),
                   width: double.infinity,
                   child: Text("  1. THE APPLICATION",style: GoogleFonts.poppins(fontWeight: FontWeight.w500,fontSize: 12,color: const Color(0xFF0D4A64)),textAlign: TextAlign.left,),
                 ),
-                Text("1.1 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation",
-                  style: GoogleFonts.poppins(fontSize: 12,fontWeight: FontWeight.w400,color: const Color(0xFF6C6C6C)),textAlign: TextAlign.justify,),
+                UserWidget.legalScreenText("1.1 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation"),
                 const SizedBox(height: 10,),
-                Text("1.2 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation",
-                  style: GoogleFonts.poppins(fontSize: 12,fontWeight: FontWeight.w400,color: const Color(0xFF6C6C6C)),textAlign: TextAlign.justify,),
+                UserWidget.legalScreenText("1.2 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation"),
                 Container(
                   margin: const EdgeInsets.only(top: 18,bottom: 8),
                   width: double.infinity,
                   child: Text("  1. THE APPLICATION",style: GoogleFonts.poppins(fontWeight: FontWeight.w500,fontSize: 12,color: const Color(0xFF0D4A64)),textAlign: TextAlign.left,),
                 ),
-                Text("1.1 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation",
-                  style: GoogleFonts.poppins(fontSize: 12,fontWeight: FontWeight.w400,color: const Color(0xFF6C6C6C)),textAlign: TextAlign.justify,),
+                UserWidget.legalScreenText("1.1 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation"),
+            const SizedBox(height: 10,),
+                UserWidget.legalScreenText("1.2 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation"),
                 const SizedBox(height: 10,),
-                Text("1.2 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation",
-                  style: GoogleFonts.poppins(fontSize: 12,fontWeight: FontWeight.w400,color: const Color(0xFF6C6C6C)),textAlign: TextAlign.justify,),
-                const SizedBox(height: 10,),
-                Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non  ",
-                  style: GoogleFonts.poppins(fontSize: 12,fontWeight: FontWeight.w400,color: const Color(0xFF6C6C6C)),textAlign: TextAlign.justify,),
+                UserWidget.legalScreenText("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non  "),
                 const SizedBox(height: 15,),
                 Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tUt enim ad minim veniam, ullamco laboris nisi ut aliquip ",
                   style: GoogleFonts.poppins(fontSize: 12,fontWeight: FontWeight.w400,decoration: TextDecoration.underline,decorationColor:const Color(0xFF5C90DC) ,color: const Color(0xFF5C90DC),),textAlign: TextAlign.justify,),
                 const SizedBox(height: 15,),
-                Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea ",
-                  style: GoogleFonts.poppins(fontSize: 12,fontWeight: FontWeight.w400,color: const Color(0xFF6C6C6C)),textAlign: TextAlign.justify,),
+                UserWidget.legalScreenText("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea "),
                 const SizedBox(height: 10,),
-                Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [const Text("  \u2022  ",style: TextStyle(color: Color(0xFF6C6C6C)),),
-                    Expanded(child: SizedBox(
-                        child: Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
-                          style: GoogleFonts.poppins(fontSize: 12,fontWeight: FontWeight.w400,color: const Color(0xFF6C6C6C)),textAlign: TextAlign.justify,),),),],),
-                Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [const Text("  \u2022  ",style: TextStyle(color: Color(0xFF6C6C6C)),),
-                    Expanded(child: SizedBox(
-                        child: Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
-                          style: GoogleFonts.poppins(fontSize: 12,fontWeight: FontWeight.w400,color: const Color(0xFF6C6C6C)),textAlign: TextAlign.justify,),),),],),
-                Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [const Text("  \u2022  ",style: TextStyle(color: Color(0xFF6C6C6C)),),
-                    Expanded(child: SizedBox(
-                        child: Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
-                          style: GoogleFonts.poppins(fontSize: 12,fontWeight: FontWeight.w400,color: const Color(0xFF6C6C6C)),textAlign: TextAlign.justify,),),),],),
+                UserWidget.legalScreenOptionText("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor"),
+                UserWidget.legalScreenOptionText("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor"),
+                UserWidget.legalScreenOptionText("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor"),
                 const SizedBox(height: 20,),
               ],
             ),

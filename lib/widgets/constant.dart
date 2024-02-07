@@ -10,8 +10,8 @@ class Constant{
       toastLength: Toast.LENGTH_SHORT,
       gravity: ToastGravity.BOTTOM,
       timeInSecForIosWeb: 1,
-      backgroundColor: const Color(0xFF6C6C6C),
-      textColor: Colors.white,
+      backgroundColor:  Colors.white,
+      textColor: const Color(0xFF0D4A64),
       fontSize: 10.0,
     );
   }
@@ -30,72 +30,7 @@ class Constant{
     {"name": "Emma Adian", "msg": "See you later! Thank You", "time": "17:55", "image":"assets/images/menImage.png"}
   ];
 
-  static Widget labelText(String label){
-    return Container(
-      margin: const EdgeInsets.only(left: 16),
-      width: double.infinity,
-      child: Text(label,
-        style: GoogleFonts.poppins(
-            fontWeight: FontWeight.w400,
-            fontSize: 12,
-            height: 2.5
-        ),
 
-      ),
-    );
-  }
-
-  static Widget textField(TextEditingController controller,String hintText){
-    return SizedBox(
-      height: 36,
-      child: TextFormField(
-        controller: controller,
-        style: GoogleFonts.poppins(
-            fontWeight: FontWeight.w400,fontSize: 12,color: const Color(0xFF6C6C6C)),
-        cursorColor: Colors.grey,
-        cursorWidth: 1,
-        decoration: InputDecoration(
-            hintText: hintText,
-            hintStyle: GoogleFonts.poppins(
-                fontWeight: FontWeight.w400, fontSize: 12),
-            contentPadding:
-            const EdgeInsets.symmetric(horizontal: 16),
-            fillColor: Colors.white,
-            filled: true,
-            enabledBorder: OutlineInputBorder(
-              borderSide: const BorderSide(
-                width: 0.5,
-                color: Colors.black,
-              ),
-              borderRadius: BorderRadius.circular(19),
-            ),
-            focusedBorder: OutlineInputBorder(
-              borderSide: const BorderSide(
-                width: 0.5,
-                color: Colors.black,
-              ),
-              borderRadius: BorderRadius.circular(19),
-            )
-      ),
-      ),
-    );
-  }
-
-  static Widget mainButton(VoidCallback onTap,String text,Color backGround,Color textColor,double fontSize,){
-    return InkWell(
-      borderRadius: BorderRadius.circular(25),
-      onTap: onTap,
-      child: Container(
-        width: 174,
-        height: 36,
-        decoration: BoxDecoration(
-            color: backGround,
-            borderRadius: BorderRadius.circular(25)
-        ),
-        child: Center(child: Text(text,style: GoogleFonts.poppins(fontWeight: FontWeight.w400,fontSize: fontSize,color: textColor),)),
-      ),
-    );
-  }
 
 }
 

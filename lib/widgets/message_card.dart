@@ -23,21 +23,22 @@ Widget greenMessage(){
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         const SizedBox(),
-        Flexible(
+        SizedBox(
+          width: 215,
           child: Column(
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
               Flexible(
                 child: Container(
-                  width: 215,
+                  // width: 215,
                   margin: const EdgeInsets.only(bottom: 4),
                   padding: const EdgeInsets.only(right: 12,left: 15,top: 15,bottom: 15),
                   decoration: const BoxDecoration(
                     color: Color.fromRGBO(13, 74, 100, 1),
                     borderRadius: BorderRadius.only(topRight: Radius.circular(20),topLeft: Radius.circular(20),bottomLeft: Radius.circular(20))
                   ),
-                  child:Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut",
+                  child:Text("Lorem ipsum dolor   sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut ",
                   style: GoogleFonts.poppins(fontWeight: FontWeight.w300,fontSize: 10,color: Colors.white,),
                   textAlign: TextAlign.justify,),
                 ),
@@ -52,29 +53,27 @@ Widget greenMessage(){
   );
 }
 
-
 Widget whiteMessage(){
   return Padding(
     padding: const EdgeInsets.symmetric(vertical: 5),
     child: Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-
-        Flexible(
+        SizedBox(
+          width: 215,
           child: Column(
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Flexible(
                 child: Container(
-                  width: 215,
                   margin: const EdgeInsets.only(bottom: 4),
                   padding: const EdgeInsets.only(right: 15,left: 12,top: 15,bottom: 15),
                   decoration: const BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.only(topRight: Radius.circular(20),topLeft: Radius.circular(20),bottomRight: Radius.circular(20))
                   ),
-                  child:Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut",
+                  child:Text("Lorem ipsum  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut",
                     style: GoogleFonts.poppins(fontWeight: FontWeight.w300,fontSize: 10,color: const Color(0xFF6C6C6C),),
                     textAlign: TextAlign.justify,),
                 ),
@@ -136,10 +135,7 @@ Widget greenMessageImage(){
             ],
           ),
         ),
-
       ],
     ),
   );
 }
-
-

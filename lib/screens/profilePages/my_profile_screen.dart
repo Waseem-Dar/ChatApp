@@ -6,14 +6,21 @@ import 'package:chat_app/widgets/textField_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../../widgets/user_widgets.dart';
+
 class MyProfileScreen extends StatefulWidget {
   const MyProfileScreen({super.key});
 
   @override
   State<MyProfileScreen> createState() => _MyProfileScreenState();
 }
-TextEditingController firstNameController = TextEditingController();
-TextEditingController lastNameController = TextEditingController();
+TextEditingController firstNameController = TextEditingController(text: "Lorem");
+TextEditingController lastNameController = TextEditingController(text: "Ipsum");
+
+TextEditingController phoneNoController = TextEditingController(text: "+92 3311231234");
+TextEditingController emailController = TextEditingController(text: "LoremIpsum001@gamil.com");
+
+bool isEdit = false;
 
 class _MyProfileScreenState extends State<MyProfileScreen> {
   @override
@@ -39,8 +46,8 @@ class _MyProfileScreenState extends State<MyProfileScreen> {
                     Text("My Profile",style: GoogleFonts.poppins(fontWeight: FontWeight.w500,fontSize: 20,color: Colors.black),),
                     TextButton(
                         onPressed: (){},
-                        style: ElevatedButton.styleFrom(visualDensity: const VisualDensity(horizontal: -4)),
-                        child:  Text("Done",style: GoogleFonts.poppins(fontSize: 14,fontWeight: FontWeight.w500,color: const Color(0xFF929292)),))
+                        style: ElevatedButton.styleFrom(visualDensity: const VisualDensity(horizontal: -4),),
+                        child:  Text("Done",style: GoogleFonts.poppins(fontSize: 14,fontWeight: FontWeight.w500,color:isEdit ?const Color(0xFF0D4A64) :const Color(0xFF929292)),))
                   ],
                 ),
                 const SizedBox(height:15 ,),
@@ -58,19 +65,37 @@ class _MyProfileScreenState extends State<MyProfileScreen> {
                     onTap: () {},
                     child: Text("Edit your Profile",style: GoogleFonts.poppins( fontWeight: FontWeight.w500,fontSize: 12,color: const Color(0xFF5C90DC)),)),
                 const SizedBox(height: 10,),
-                Constant.labelText("First Name"),
-                Constant.textField(firstNameController, "First Name"),
-                const SizedBox(height: 15,),
-                Constant.labelText("Last Name"),
-               Constant.textField(lastNameController, "Last Name"),
+                UserWidget.labelText("First Name"),
+                UserWidget.textFormField(controller: firstNameController,onChange: () {
+                  setState(() {
+                    isEdit = true;
+                  });
+                },),
                 const SizedBox(height: 10,),
-                Constant.labelText("Email Address"),
-                const TextFieldWidget(hintText: "LoremIpsum001@gamil.com"),
+                UserWidget.labelText("Last Name"),
+                UserWidget.textFormField(controller: lastNameController,onChange: () {
+                  setState(() {
+                    isEdit = true;
+                  });
+                },),
                 const SizedBox(height: 10,),
-                Constant.labelText("Phone No"),
-                const TextFieldWidget(hintText: "+92 3311231234"),
+                UserWidget.labelText("Email Address"),
+                UserWidget.textFormField(controller: emailController,onChange: () {
+                  setState(() {
+                    isEdit = true;
+                  });
+                },),
+                const SizedBox(height: 10,),
+                UserWidget.labelText("Phone No"),
+                UserWidget.textFormField(controller: phoneNoController,onChange: () {
+                  setState(() {
+                    isEdit = true;
+                  });
+                },),
                 const SizedBox(height: 31,),
-                Constant.mainButton(() {}, "Delete Account", Colors.white, const Color(0xFFFF0000), 12)
+                UserWidget.mainButton(() {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => const DeleteAccountScreen(),));
+                }, "Delete Account", Colors.white, const Color(0xFFFF0000), 12)
               ],            //last
             ),
           ),
