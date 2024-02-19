@@ -1,19 +1,20 @@
  import 'package:flutter/material.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class Constant{
-  static showToast(String title){
-    Fluttertoast.showToast(
-      msg: title,
-      toastLength: Toast.LENGTH_SHORT,
-      gravity: ToastGravity.BOTTOM,
-      timeInSecForIosWeb: 1,
-      backgroundColor:  Colors.white,
-      textColor: const Color(0xFF0D4A64),
-      fontSize: 10.0,
-    );
+
+  static void showSnackBar(BuildContext context, String msg) {
+    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+      content: Center(child: Text(msg,style: GoogleFonts.poppins(fontSize: 10,fontWeight: FontWeight.w400,color:const Color(0xFF0D4A64) ),)),
+      backgroundColor: Colors.white,
+      elevation: 1,
+      padding: const EdgeInsets.symmetric(vertical: 8),
+      duration: const Duration(seconds: 2 ),
+      behavior: SnackBarBehavior.floating,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+      width: 168,
+    ));
   }
 
  static final List<Place> places = [
@@ -29,8 +30,6 @@ class Constant{
     {"name": "David Warner", "msg": "What's up?", "time": "12:10", "image":"assets/images/menImage.png"},
     {"name": "Emma Adian", "msg": "See you later! Thank You", "time": "17:55", "image":"assets/images/menImage.png"}
   ];
-
-
 
 }
 

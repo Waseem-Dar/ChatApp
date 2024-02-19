@@ -1,7 +1,5 @@
-import 'package:chat_app/widgets/constant.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-
 import '../../widgets/user_widgets.dart';
 
 class CreateGroupScreen extends StatefulWidget {

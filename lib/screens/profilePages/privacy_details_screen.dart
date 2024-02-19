@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-
-import '../../widgets/constant.dart';
 import '../../widgets/user_widgets.dart';
 
 class PrivacyDetailsScreen extends StatelessWidget {

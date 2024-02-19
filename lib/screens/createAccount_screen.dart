@@ -1,10 +1,8 @@
 import 'package:chat_app/screens/tab_screen.dart';
-import 'package:chat_app/widgets/constant.dart';
 import 'package:chat_app/widgets/textField_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:country_picker/country_picker.dart';
-
 import '../widgets/user_widgets.dart';
 
 class CreateAccountScreen extends StatefulWidget {

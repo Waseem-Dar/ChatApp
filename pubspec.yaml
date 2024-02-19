@@ -32,7 +32,6 @@ dependencies:
     sdk: flutter
   google_fonts: ^6.1.0
   flutter_toggle_tab: ^1.4.1
-  fluttertoast: ^8.2.4
   google_maps_flutter: ^2.5.2
   country_picker: ^2.0.23
   location: ^5.0.3
@@ -46,6 +45,13 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  flutter_launcher_icons: ^0.13.1
+
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/images/logoIcon.png"
+  remove_alpha_ios: true
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is

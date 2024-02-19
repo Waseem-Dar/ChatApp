@@ -1,11 +1,6 @@
-import 'dart:developer';
-
 import 'package:chat_app/screens/profilePages/delete_account_screen.dart';
-import 'package:chat_app/widgets/constant.dart';
-import 'package:chat_app/widgets/textField_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-
 import '../../widgets/user_widgets.dart';
 
 class MyProfileScreen extends StatefulWidget {
@@ -45,7 +40,12 @@ class _MyProfileScreenState extends State<MyProfileScreen> {
                         icon: const Icon(Icons.arrow_back_ios_new_rounded,size: 20,)),
                     Text("My Profile",style: GoogleFonts.poppins(fontWeight: FontWeight.w500,fontSize: 20,color: Colors.black),),
                     TextButton(
-                        onPressed: (){},
+                        onPressed: (){
+                          setState((){
+                            isEdit = false;
+                          });
+                          Navigator.pop(context);
+                        },
                         style: ElevatedButton.styleFrom(visualDensity: const VisualDensity(horizontal: -4),),
                         child:  Text("Done",style: GoogleFonts.poppins(fontSize: 14,fontWeight: FontWeight.w500,color:isEdit ?const Color(0xFF0D4A64) :const Color(0xFF929292)),))
                   ],

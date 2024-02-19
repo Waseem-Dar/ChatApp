@@ -1,10 +1,8 @@
 import 'dart:async';
-import 'package:chat_app/screens/send_location_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:location/location.dart';
-
 import 'contact_share_location_screen.dart';
 
 class LocationScreen extends StatefulWidget {

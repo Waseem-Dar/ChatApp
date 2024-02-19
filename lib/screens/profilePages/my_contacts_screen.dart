@@ -124,7 +124,7 @@ class _MyContactsScreenState extends State<MyContactsScreen> {
                             children: [
                               InkWell(
                                 onTap:() {
-                                  Constant.showToast("     Request Rejected     ");
+                                  Constant.showSnackBar(context, "Request Rejected");
                                 },
                                 child: Container(
                                   padding: const EdgeInsets.all(1),
@@ -139,7 +139,7 @@ class _MyContactsScreenState extends State<MyContactsScreen> {
                               ),
                               InkWell(
                                 onTap:() {
-                                  Constant.showToast("     Request Accepted     ");
+                                  Constant.showSnackBar(context, "Request Accepted");
                                 },
                                 child: Container(
                                   padding: const EdgeInsets.all(4),

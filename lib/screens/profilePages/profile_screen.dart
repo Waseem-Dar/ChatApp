@@ -16,7 +16,7 @@ class ProfileScreen extends StatefulWidget {
 
 //Notification Tile Switch Button status
 bool status = true;
-// ScrollController
+// ScrollBarController
 final ScrollController verticalScroll = ScrollController();
 
 class _ProfileScreenState extends State<ProfileScreen> {
@@ -45,7 +45,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 child: Column(
                   children: [
                     const SizedBox(height: 91,),
-                    Text('My Spher',style: GoogleFonts.poppins(fontWeight: FontWeight.w600,fontSize: 32,color: Colors.white),),
+                    Text('My Spher',style: GoogleFonts.poppins(fontWeight:FontWeight.w600,fontSize:32,color:Colors.white),),
                     const SizedBox(height: 17,),
                   ],
                 ),
@@ -61,7 +61,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   ),
                   child: Scrollbar(
                     controller: verticalScroll,
-                    thickness:1 ,
+                    thickness:1,
                     child: SingleChildScrollView(
                       controller: verticalScroll,
                       physics: const BouncingScrollPhysics(),
@@ -167,7 +167,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                     title: Text("Notifications",style: GoogleFonts.poppins(fontSize: 14,fontWeight: FontWeight.w500,color: const Color(0xFF0D4A64),),),
                                     subtitle: Text("Turn on/off notifications",style: GoogleFonts.poppins(fontWeight: FontWeight.w400,fontSize: 12,color: const Color(0xFF6C6C6C)),),
                                     trailing: Transform.scale(
-                                      scaleY:0.6 ,
+                                      scaleY:0.6,
                                       scaleX: 0.6,
                                       alignment: Alignment.centerRight,
                                       child: Switch(
@@ -193,12 +193,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                   ),),
                                 const Divider(indent: 5, color: Color(0x49929292), height: 0,),
                                 SizedBox(
-                                  height: 57 ,
+                                  height: 57,
                                   child: ListTile(
                                     onTap: () {
                                       Navigator.push(context, MaterialPageRoute(builder: (context) => const AboutSpherScreen(),));},
                                     contentPadding: const EdgeInsets.symmetric(horizontal: 0),
-                                    leading: const ImageIcon(AssetImage("assets/images/about-tile-icon.png"),size: 25,),
+                                    leading: const ImageIcon(AssetImage("assets/images/about-tile-icon.png"),size: 25,color:Color(0xFF0D4A64) ,),
                                     title: Text("About Spher",style: GoogleFonts.poppins(fontSize: 14,fontWeight: FontWeight.w500,color: const Color(0xFF0D4A64),),),
                                     trailing: const Icon(Icons.arrow_forward_ios_sharp,color: Color(0xFF0D4A64),size: 15,),
                                   ),),

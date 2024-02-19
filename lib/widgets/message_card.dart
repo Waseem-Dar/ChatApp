@@ -31,7 +31,6 @@ Widget greenMessage(){
             children: [
               Flexible(
                 child: Container(
-                  // width: 215,
                   margin: const EdgeInsets.only(bottom: 4),
                   padding: const EdgeInsets.only(right: 12,left: 15,top: 15,bottom: 15),
                   decoration: const BoxDecoration(

@@ -64,7 +64,7 @@ class _InfluencerScreenState extends State<InfluencerScreen> {
                     shrinkWrap: true,
                     physics:const  NeverScrollableScrollPhysics(),
                     itemBuilder: (context, index) {
-                      Map<String ,dynamic> list = socialList[index]  ;
+                      Map<String ,dynamic> list = socialList[index];
                       String title = list["title"];
                       String subTitle = list["subTitle"];
                       String image = list["image"];

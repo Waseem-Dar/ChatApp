@@ -77,14 +77,14 @@ class _AddPlaceScreenState extends State<AddPlaceScreen> {
              if(_selectedLocation != null){
               final place = Place(name: nameController.text.toString(), latLng: _selectedLocation!);
               if(nameController.text.isEmpty ) {
-                Constant.showToast("Enter place name");
+                Constant.showSnackBar(context, "Enter place name");
               }else{
                  Constant.places.add(place);
                  nameController.clear();
-                 Constant.showToast("Place added");
+                 Constant.showSnackBar(context, "Place added");
               }
              }else{
-               Constant.showToast("Select location");
+               Constant.showSnackBar(context, "Select location");
              }
            },
                "Save place",const Color(0xFF0D4A64), Colors.white, 16),
