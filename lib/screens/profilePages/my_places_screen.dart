@@ -22,7 +22,6 @@ class _MyPlacesScreenState extends State<MyPlacesScreen> {
   Stream<List<Place>> getPlacesStream() async* {
     await Future.delayed(const Duration(microseconds: 500));
     yield Constant.places;
-
   }
 
   @override

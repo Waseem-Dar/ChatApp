@@ -109,7 +109,5 @@ class UserWidget{
           child: Text(text,
             style: GoogleFonts.poppins(fontSize: 12,fontWeight: FontWeight.w400,color: const Color(0xFF6C6C6C)),textAlign: TextAlign.justify,),),),],);
   }
-
-
-
+  
 }
