@@ -20,7 +20,6 @@ class TermsDetailsScreen extends StatelessWidget {
         thickness: 1,
         child: SingleChildScrollView(
           controller: verticalScroll,
-          physics: const BouncingScrollPhysics(),
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 23),
             child: Column(

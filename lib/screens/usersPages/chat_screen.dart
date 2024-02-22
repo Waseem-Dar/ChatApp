@@ -1,4 +1,5 @@
 import 'package:chat_app/screens/usersPages/chat_user_details_screen.dart';
+import 'package:chat_app/widgets/user_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../../widgets/message_card.dart';
@@ -10,7 +11,7 @@ class ChatScreen extends StatefulWidget {
   @override
   State<ChatScreen> createState() => _ChatScreenState();
 }
-
+bool showBox = false;
 class _ChatScreenState extends State<ChatScreen> {
   @override
   Widget build(BuildContext context) {
@@ -83,12 +84,16 @@ class _ChatScreenState extends State<ChatScreen> {
                         Expanded(
                             child: ListView.builder(
                               padding: const EdgeInsets.only(top: 20,left: 26,right: 26),
-                                itemCount:10,
+                                itemCount:9,
                                  itemBuilder: (context, index) {
                                   return  MessageCard(index: index,);
                                    },)),
+                        // SizedBox(
+                        //   height: 40,
+                        // ),
                         Container(
                           height: 51,
+                          margin: EdgeInsets.symmetric(horizontal: 26),
                           decoration: BoxDecoration(
                           color: Colors.white,
                             borderRadius: BorderRadius.circular(26),
@@ -98,6 +103,7 @@ class _ChatScreenState extends State<ChatScreen> {
                             child: Row(
                               children: [
                                 IconButton(
+                                  highlightColor: Colors.transparent,
                                     padding:EdgeInsets.zero,
                                     visualDensity: const VisualDensity(horizontal: -4,vertical: -4),
                                     onPressed: (){},
@@ -123,6 +129,7 @@ class _ChatScreenState extends State<ChatScreen> {
                                   ),
                                 )),
                                 IconButton(
+                                    highlightColor: Colors.transparent,
                                     padding:EdgeInsets.zero,
                                     visualDensity: const VisualDensity(horizontal: -4,vertical: -4),
                                     onPressed: (){}, icon: const ImageIcon(AssetImage("assets/images/sendIcon.png"),size: 19,))
@@ -135,7 +142,9 @@ class _ChatScreenState extends State<ChatScreen> {
                   ),
                 )
               ],
-            )
+            ),
+            UserWidget.replayShowBox()
+
           ],
         ),
       ),

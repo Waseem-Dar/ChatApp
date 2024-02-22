@@ -109,5 +109,31 @@ class UserWidget{
           child: Text(text,
             style: GoogleFonts.poppins(fontSize: 12,fontWeight: FontWeight.w400,color: const Color(0xFF6C6C6C)),textAlign: TextAlign.justify,),),),],);
   }
-  
+
+
+  static Widget replayShowBox(){
+    return  Positioned(
+      bottom: 65,
+      left: 26,
+      child: Container(
+        width: 50,
+        height: 23,
+        padding: EdgeInsets.symmetric(horizontal: 13),
+        // margin: EdgeInsets.only(bottom: 65),
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(14),
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            ImageIcon(AssetImage("assets/images/ellipse3.png"),size: 5,color: Colors.black.withOpacity(0.6),),
+            ImageIcon(AssetImage("assets/images/ellipse1.png"),size: 5,color: Colors.black.withOpacity(0.4),),
+            ImageIcon(AssetImage("assets/images/ellipse2.png"),size: 5,color: Color(0xFFD9D9D9),),
+          ],
+        ),
+      ),
+    );
+  }
+
 }
