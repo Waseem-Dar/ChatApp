@@ -88,9 +88,6 @@ class _ChatScreenState extends State<ChatScreen> {
                                  itemBuilder: (context, index) {
                                   return  MessageCard(index: index,);
                                    },)),
-                        // SizedBox(
-                        //   height: 40,
-                        // ),
                         Container(
                           height: 51,
                           margin: EdgeInsets.symmetric(horizontal: 26),
