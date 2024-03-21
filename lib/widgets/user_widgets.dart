@@ -110,7 +110,7 @@ class UserWidget{
             style: GoogleFonts.poppins(fontSize: 12,fontWeight: FontWeight.w400,color: const Color(0xFF6C6C6C)),textAlign: TextAlign.justify,),),),],);
   }
 
-
+                                 // another user sending text message show this box
   static Widget replayShowBox(){
     return  Positioned(
       bottom: 65,

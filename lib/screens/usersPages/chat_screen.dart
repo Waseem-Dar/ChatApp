@@ -82,6 +82,7 @@ class _ChatScreenState extends State<ChatScreen> {
                     child: Column(
                       children: [
                         Expanded(
+                                                      // All Messages
                             child: ListView.builder(
                               padding: const EdgeInsets.only(top: 20,left: 26,right: 26),
                                 itemCount:9,

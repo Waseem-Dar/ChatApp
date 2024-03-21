@@ -15,7 +15,7 @@ class _MessageCardState extends State<MessageCard> {
     return widget.index.isEven?greenMessage():whiteMessage() ;
   }
 }
-
+                             // Message card 1
 Widget greenMessage(){
   return Padding(
     padding: const EdgeInsets.symmetric(vertical: 5),
@@ -51,6 +51,8 @@ Widget greenMessage(){
   );
 }
 
+                          // Message card 2
+
 Widget whiteMessage(){
   return Padding(
     padding: const EdgeInsets.symmetric(vertical: 5),
@@ -85,7 +87,7 @@ Widget whiteMessage(){
     ),
   );
 }
-
+                                 // Image card
 
 Widget greenMessageImage(){
   return Padding(

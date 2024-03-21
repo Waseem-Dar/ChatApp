@@ -88,7 +88,7 @@ class _ChatUserDetailsScreenState extends State<ChatUserDetailsScreen> {
                           padding: const EdgeInsets.only(right: 15),
                           child: InkWell(
                             onTap: () {},
-                            child: Text("Reques Location",style: GoogleFonts.poppins(
+                            child: Text("Request Location",style: GoogleFonts.poppins(
                                 fontWeight: FontWeight.w500,fontSize: 12,color: const Color(0xFF5C90DC)),),
                           ),
                         ),

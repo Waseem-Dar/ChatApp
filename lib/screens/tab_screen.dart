@@ -1,5 +1,5 @@
 import 'package:chat_app/screens/influencer_screen.dart';
-import 'package:chat_app/screens/location_screen.dart';
+import 'package:chat_app/screens/location_screens/location_screen.dart';
 import 'package:chat_app/screens/profilePages/profile_screen.dart';
 import 'package:chat_app/screens/usersPages/users_screen.dart';
 import 'package:flutter/material.dart';
@@ -48,13 +48,11 @@ class _TabScreenState extends State<TabScreen> {
            BottomNavigationBarItem(label: 'Influencer',
               icon: _currentIndex == 2 ?
                    const ImageIcon(AssetImage("assets/images/influencer-2.png"),size: 25,color: Color.fromRGBO(13, 74, 100, 1))
-                  :const ImageIcon(AssetImage("assets/images/influencer.png"),size: 25,),
-          ),
+                  :const ImageIcon(AssetImage("assets/images/influencer.png"),size: 25,),),
            BottomNavigationBarItem(label: 'Profile',
               icon: _currentIndex == 3 ?
                    const ImageIcon(AssetImage("assets/images/profile.png"),size: 25,color: Color.fromRGBO(13, 74, 100, 1))
-                  :const ImageIcon(AssetImage("assets/images/profile.png"),size: 25,)
-          ),
+                  :const ImageIcon(AssetImage("assets/images/profile.png"),size: 25,)),
         ]),
       ),
     );

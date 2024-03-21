@@ -183,7 +183,6 @@ class _SendLocationScreenState extends State<SendLocationScreen> {
                       onPressed: (){
                         selectedIndex = 1;
                         Navigator.pop(context);
-
                       },
                       style: ElevatedButton.styleFrom(backgroundColor: const Color(0xFF0D4A64),),
                       child: Text("Share with destination",style: GoogleFonts.inter(fontSize: 12,fontWeight: FontWeight.w500,color: Colors.white),)),
@@ -196,6 +195,10 @@ class _SendLocationScreenState extends State<SendLocationScreen> {
         );
     },);
   }
+
+
+
+
 
   void showDestinationDialog(){
     showDialog(context: context, builder: (_) => AlertDialog(

@@ -1,4 +1,4 @@
-import 'package:chat_app/screens/signin_screen.dart';
+import 'package:chat_app/screens/auth_screens/signin_screen.dart';
 import 'package:flutter/material.dart';
 late Size mq;
 void main() {

@@ -1,8 +1,8 @@
-import 'package:chat_app/screens/createAccount_screen.dart';
+import 'package:chat_app/screens/auth_screens/createAccount_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import '../main.dart';
-import '../widgets/user_widgets.dart';
+import '../../main.dart';
+import '../../widgets/user_widgets.dart';
 
 class SignInScreen extends StatefulWidget {
   const SignInScreen({super.key});
@@ -43,7 +43,6 @@ class _SignInScreenState extends State<SignInScreen> {
                        Text("Inspiring Empowerment",style: GoogleFonts.montserrat(fontWeight: FontWeight.w400,fontSize: 13,color: const Color(0xFF0F2C43)),) ,
                      ],
                    ),
-                   // height: 100,
                  ),
                ),
               Container(
@@ -134,6 +133,7 @@ class _SignInScreenState extends State<SignInScreen> {
                         ),
                       ),
                       const SizedBox(height: 35,),
+                                                             // Sign In button
                       InkWell(
                         borderRadius: BorderRadius.circular(25),
                         onTap: () {
@@ -150,6 +150,7 @@ class _SignInScreenState extends State<SignInScreen> {
                         ),
                       ),
                       const SizedBox(height: 28,),
+                                                              // Text button
                      InkWell(
                        onTap: () {
                          Navigator.push(context, MaterialPageRoute(builder: (context) => const CreateAccountScreen(),));

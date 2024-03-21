@@ -3,7 +3,7 @@ import 'package:chat_app/widgets/textField_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:country_picker/country_picker.dart';
-import '../widgets/user_widgets.dart';
+import '../../widgets/user_widgets.dart';
 
 class CreateAccountScreen extends StatefulWidget {
   const CreateAccountScreen({super.key});
@@ -136,6 +136,7 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                 UserWidget.labelText("Confirm Password"),
                 TextFieldWidget(hintText: "Confirm your password",controller: confirmPasswordController),
                 const SizedBox(height: 36,),
+                                                           // Registration button
                 InkWell(
                   borderRadius: BorderRadius.circular(25),
                   onTap: () {
