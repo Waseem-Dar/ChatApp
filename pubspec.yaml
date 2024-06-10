@@ -14,8 +14,8 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 # In iOS, build-name is used as CFBundleShortVersionString while build-number is used as CFBundleVersion.
 # Read more about iOS versioning at
 # https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
-# In Windows, build-name is used as the major, minor, and patch parts
-# of the product and file versions while build-number is used as the build suffix.
+# In Windows, build-name is used as the major, minor, and patch partsnumber is used as the build suffix.
+# of the product and file versions while build-
 version: 1.0.0+1
 
 environment:
@@ -36,11 +36,11 @@ dependencies:
   country_picker: ^2.0.23
   location: ^5.0.3
   flutter_speed_dial: ^7.0.0
+  cupertino_icons: ^1.0.2
 
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
-  cupertino_icons: ^1.0.2
 
 dev_dependencies:
   flutter_test:
