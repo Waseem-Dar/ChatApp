@@ -1,3 +1,5 @@
+name: "Build & Release"
+
 on:
   pull_request:
     branches:
@@ -6,7 +8,7 @@ on:
     branches:
       - master
       - work
-name: "Build & Release"
+
 jobs:
   build:
     name: Build & Release
@@ -22,18 +24,18 @@ jobs:
           channel: 'stable'
           architecture: x64
 
+      - run: flutter pub get
+
       - run: flutter build apk --release --split-per-abi
-      #      - run: |
-      #          flutter build ios --no-codesign
-      #          cd build/ios/iphoneos
-      #          mkdir Payload
-      #          cd Payload
-      #          ln -s ../Runner.app
-      #          cd ..
-      #          zip -r app.ipa Payload
+
       - name: Push to Releases
         uses: ncipollo/release-action@v1
         with:
           artifacts: "build/app/outputs/apk/release/*"
           tag: v1.0.${{ github.run_number }}
-          token: ${{ secrets.TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+        env:
+          JAVA_HOME: C:\hostedtoolcache\windows\Java_Zulu_jdk\12.0.2-3\x64
+          JAVA_HOME_12_X64: C:\hostedtoolcache\windows\Java_Zulu_jdk\12.0.2-3\x64
+          FLUTTER_ROOT: C:\hostedtoolcache\windows\flutter\stable-3.22.2-x64
+          PUB_CACHE: C:\Users\runneradmin\AppData\Local\Pub\Cache
