@@ -28,7 +28,12 @@ class Constant{
     {"name": "Bob Lal", "msg": "Hi, how are you?", "time": "15:20", "image":"assets/images/menImage.png"},
     {"name": "Charlie Cheap", "msg": "Good morning!", "time": "08:45", "image":"assets/images/menImage.png"},
     {"name": "David Warner", "msg": "What's up?", "time": "12:10", "image":"assets/images/menImage.png"},
-    {"name": "Emma Adian", "msg": "See you later! Thank You", "time": "17:55", "image":"assets/images/menImage.png"}
+    {"name": "Emma Adian", "msg": "See you later! Thank You", "time": "17:55", "image":"assets/images/menImage.png"},
+    {"name": "Anna grace", "msg": "What are you going", "time": "09:30", "image":"assets/images/menImage.png"},
+    {"name": "Dahlia Rose", "msg": "That's wrong!", "time": "15:20", "image":"assets/images/menImage.png"},
+    {"name": "Avery James", "msg": "Good evening!", "time": "08:45", "image":"assets/images/menImage.png"},
+    {"name": "Sarah Jane", "msg": "Call me OK.", "time": "12:10", "image":"assets/images/menImage.png"},
+    {"name": "Hattie Lee ", "msg": "Yah! Thank You", "time": "17:55", "image":"assets/images/menImage.png"}
   ];
 
   static String firstString = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation";
