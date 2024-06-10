@@ -97,7 +97,7 @@ class _SignInScreenState extends State<SignInScreen> {
                                 borderRadius: BorderRadius.circular(19),
                               ),
                               suffixIcon: Container(
-                                margin: const EdgeInsets.all(10),
+                                margin: const EdgeInsets.all(10),  
                                 width: 30,
                                   decoration: const BoxDecoration(
                                     image: DecorationImage(image: AssetImage("assets/images/hide.jpg",),),),),
