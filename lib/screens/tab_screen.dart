@@ -11,7 +11,7 @@ class TabScreen extends StatefulWidget {
   State<TabScreen> createState() => _TabScreenState();
 }
 int _currentIndex = 0;
-final List _tabs = [ 
+final List _tabs = [
   const LocationScreen(),
   const UsersScreen(),
   const InfluencerScreen(),
