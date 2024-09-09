@@ -79,7 +79,7 @@ class _UsersScreenState extends State<UsersScreen> {
                                   fillColor: const Color.fromRGBO(255, 255, 255, 0.47),
                                   hintText: "Search",
                                   hintStyle: GoogleFonts.poppins(fontSize: 10,fontWeight: FontWeight.w400,color: Colors.white),
-                                  contentPadding: const EdgeInsets.only(bottom: 5),
+                                  contentPadding: const EdgeInsets.only(bottom: 5,right: 10),
                                   border: OutlineInputBorder(borderRadius: BorderRadius.circular(9),borderSide: BorderSide.none),
                                   prefixIcon: const Padding(
                                     padding: EdgeInsets.symmetric(vertical: 3.5),
@@ -120,53 +120,49 @@ class _UsersScreenState extends State<UsersScreen> {
                       }else if(!snapshot.hasData || snapshot.data!.isEmpty){
                         return  Center(child: Text("No chats yet",style: GoogleFonts.poppins(fontSize: 16,fontWeight: FontWeight.w400,color: const Color(0xFF6C6C6C)),),);
                       }else{
-                        return Padding(
-                           padding: const EdgeInsets.symmetric(horizontal: 40),
-                           child: ListView.builder(
-                              physics: const BouncingScrollPhysics(),
-                              padding: const EdgeInsets.only(top: 44),
-                              itemCount: snapshot.data!.length,
-                              itemBuilder: (context, index) {
-                                final user = snapshot.data![index];
-                                return Column(
-                                  children: [
-                                    ListTile(
-                                      onTap: () {
-                                        Navigator.push(context, MaterialPageRoute(builder: (context) => const ChatScreen(),));
-                                      },
-                                      contentPadding: EdgeInsets.zero,
-                                      leading: ClipRRect(
-                                        child: Image.asset("assets/images/menImage.png",width: 43,height: 43,),
-                                      ),
-                                      title: Text(user["name"],style: GoogleFonts.poppins(fontSize: 14,fontWeight: FontWeight.w600,color: Colors.black),),
-                                      subtitle: Text(user["msg"].toString(),style: GoogleFonts.poppins(fontWeight: FontWeight.w400,fontSize: 11,color:const Color(0xFF6C6C6C) ),maxLines: 1,),
-                                      trailing: Padding(
-                                        padding: const EdgeInsets.only(top: 10),
-                                        child: Column(
-                                          mainAxisAlignment: MainAxisAlignment.start,
-                                          children: [
-                                            SizedBox(
-                                              width:40,
-                                              child:  Text(user["time"].toString(),style: GoogleFonts.poppins(fontWeight: FontWeight.w500,fontSize: 11,color: const Color(0xFF929292)),textAlign: TextAlign.center,)),
-                                            Container(
-                                              margin:const EdgeInsets.only(top: 5),
-                                              width: 17,
-                                              height: 17,
-                                              decoration: const ShapeDecoration(
-                                                color: Color(0xFF0D4A64),
-                                                shape: OvalBorder(),
-                                              ),
-                                              child: Center(child: Text("3",style: GoogleFonts.poppins(fontSize: 9,fontWeight: FontWeight.w500,color: Colors.white),)),
-                                            )
-                                          ],
-                                        ),
-                                      ),
-                                    ),
-                                    const Divider(height: 3,endIndent: 8,color:  Color(0x49929292),)
-                                  ],
-                                );
-                              },)
-                        );
+                        return ListView.builder(
+                           padding: const EdgeInsets.only(top: 44),
+                           itemCount: snapshot.data!.length,
+                           itemBuilder: (context, index) {
+                             final user = snapshot.data![index];
+                             return Column(
+                               children: [
+                                 ListTile(
+                                   onTap: () {
+                                     Navigator.push(context, MaterialPageRoute(builder: (context) => const ChatScreen(),));
+                                   },
+                                   contentPadding: EdgeInsets.only(left: 43,right: 35),
+                                   leading: ClipRRect(
+                                     child: Image.asset("assets/images/menImage.png",width: 43,height: 43,),
+                                   ),
+                                   title: Text(user["name"],style: GoogleFonts.poppins(fontSize: 14,fontWeight: FontWeight.w600,color: Colors.black),),
+                                   subtitle: Text(user["msg"].toString(),style: GoogleFonts.poppins(fontWeight: FontWeight.w400,fontSize: 11,color:const Color(0xFF6C6C6C) ),maxLines: 1,),
+                                   trailing: Padding(
+                                     padding: const EdgeInsets.only(top: 10),
+                                     child: Column(
+                                       mainAxisAlignment: MainAxisAlignment.start,
+                                       children: [
+                                         SizedBox(
+                                           width:40,
+                                           child:  Text(user["time"].toString(),style: GoogleFonts.poppins(fontWeight: FontWeight.w500,fontSize: 11,color: const Color(0xFF929292)),textAlign: TextAlign.center,)),
+                                         Container(
+                                           margin:const EdgeInsets.only(top: 5),
+                                           width: 17,
+                                           height: 17,
+                                           decoration: const ShapeDecoration(
+                                             color: Color(0xFF0D4A64),
+                                             shape: OvalBorder(),
+                                           ),
+                                           child: Center(child: Text("3",style: GoogleFonts.poppins(fontSize: 9,fontWeight: FontWeight.w500,color: Colors.white),)),
+                                         )
+                                       ],
+                                     ),
+                                   ),
+                                 ),
+                                 const Divider(height: 3,endIndent: 40,indent: 40,color:  Color(0x49929292),)
+                               ],
+                             );
+                           },);
                       }
                     },)
                   ),

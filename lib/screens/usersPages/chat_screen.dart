@@ -85,7 +85,7 @@ class _ChatScreenState extends State<ChatScreen> {
                                                       // All Messages
                             child: ListView.builder(
                               padding: const EdgeInsets.only(top: 20,left: 26,right: 26),
-                                itemCount:9,
+                                itemCount:50,
                                  itemBuilder: (context, index) {
                                   return  MessageCard(index: index,);
                                    },)),
