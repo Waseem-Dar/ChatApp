@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "984580318463",
+    "project_id": "spher-e5060",
+    "storage_bucket": "spher-e5060.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:984580318463:android:494efb65fc387f8ac958ca",
+        "android_client_info": {
+          "package_name": "com.example.chat_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDVGsW6No1ciDruHoU5HgCmKyz1rjtPLgs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
