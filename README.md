@@ -13,13 +13,12 @@ The SPHER Chatting Application is a high-performance mobile application that all
 - 
 ## Screens Overview
 
-<img src="https://github.com/user-attachments/assets/d66f1833-7adf-46a3-8f1f-59ce333be08d" alt="Image 1" width="200"/>
-<img src="https://github.com/user-attachments/assets/3084efce-dfbd-436a-bde6-3174fe4f1d22" alt="Image 2" width="200"/>
-<img src="https://github.com/user-attachments/assets/ae618f87-0a83-46aa-add9-fb33f449f336" alt="Image 3" width="200"/>
-<img src="https://github.com/user-attachments/assets/39b3b298-4df9-4e49-981e-a2a5da93cbbb" alt="Image 4" width="200"/>
-<img src="https://github.com/user-attachments/assets/16552f4c-1404-43d3-9767-c651ea890e0e" alt="Image 5" width="200"/>
-<img src="https://github.com/user-attachments/assets/3084efce-dfbd-436a-bde6-3174fe4f1d22" alt="Image 6" width="200"/>
-<img src="https://github.com/user-attachments/assets/91c970d8-9d91-41de-8ee2-345722b2c3f5" alt="Image 6" width="200"/>
+<img src="https://github.com/user-attachments/assets/d66f1833-7adf-46a3-8f1f-59ce333be08d" alt="Image 1" width="150"/>
+<img src="https://github.com/user-attachments/assets/3084efce-dfbd-436a-bde6-3174fe4f1d22" alt="Image 2" width="150"/>
+<img src="https://github.com/user-attachments/assets/ae618f87-0a83-46aa-add9-fb33f449f336" alt="Image 3" width="150"/>
+<img src="https://github.com/user-attachments/assets/39b3b298-4df9-4e49-981e-a2a5da93cbbb" alt="Image 4" width="150"/>
+<img src="https://github.com/user-attachments/assets/16552f4c-1404-43d3-9767-c651ea890e0e" alt="Image 5" width="150"/>
+<img src="https://github.com/user-attachments/assets/91c970d8-9d91-41de-8ee2-345722b2c3f5" alt="Image 6" width="150"/>
 
 
 
