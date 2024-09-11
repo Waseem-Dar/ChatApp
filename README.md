@@ -13,9 +13,6 @@ The SPHER Chatting Application is a high-performance mobile application that all
 
 ## Screens Overview
 
-### Login Screen
-![Login Screen]([https://example.com/login-screen.png](https://public-images.interaction-design.org/literature/articles/materials/1-ixdf-Piyush-Malvi-design-screenshot.png))
-
 The application consists of various screens designed to provide a seamless user experience:
 
 1. **Login Screen**: Allows users to log in securely with their credentials.
