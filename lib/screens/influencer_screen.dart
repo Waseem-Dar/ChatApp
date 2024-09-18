@@ -19,7 +19,7 @@ final List<Map<String,dynamic>>  socialList = [
 
 class _InfluencerScreenState extends State<InfluencerScreen> {
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context) { 
     return Scaffold(
       body: Stack(
         children: [
