@@ -1,5 +1,5 @@
 import 'dart:developer';
-import 'package:chat_app/widgets/constant.dart';
+import 'package:chat_app/utils/app_constant.dart';
 import 'package:chat_app/widgets/add_location_map.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';

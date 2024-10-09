@@ -47,6 +47,8 @@ dependencies:
   location: ^5.0.3
   flutter_speed_dial: ^7.0.0
   cupertino_icons: ^1.0.2
+  animation_list: ^3.0.0
+  riverpod: ^2.5.1
 
 
   # The following adds the Cupertino Icons font to your application.

@@ -50,6 +50,7 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                     const SizedBox(),
                   ],
                 ),
+                                                                //----------    User Inputs (FirstName,LastName,UserName,EmailAddress,)
                 const SizedBox(height: 40,),
                 UserWidget.labelText("First Name"),
                 TextFieldWidget(hintText: "Enter your first name",controller: firstNameController),
@@ -64,6 +65,7 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                 TextFieldWidget(hintText: "Enter your email address",controller: emailController),
                 const SizedBox(height: 10,),
                 UserWidget.labelText("Country"),
+                                                                  //----------  Country Input
                 SizedBox(
                   height: 36,
                   child: TextFormField(
@@ -109,6 +111,7 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                       )
                   ),
                 ),
+                                                                  //----------  PhoneNumber Input
                 const SizedBox(height: 10,),
                 UserWidget.labelText("Phone No"),
                 Row(
@@ -129,6 +132,7 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                     Expanded(child: TextFieldWidget(hintText: "Phone no",controller: phoneNoController,))
                   ],
                 ),
+                                                                   //---------- UserInput  (Password,ConfirmPassword)
                 const SizedBox(height: 10,),
                 UserWidget.labelText("Password"),
                 TextFieldWidget(hintText: "Enter your password",controller: passwordController),
@@ -136,7 +140,7 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                 UserWidget.labelText("Confirm Password"),
                 TextFieldWidget(hintText: "Confirm your password",controller: confirmPasswordController),
                 const SizedBox(height: 36,),
-                                                           // Registration button
+                                                                 //------------ Registration button
                 InkWell(
                   borderRadius: BorderRadius.circular(25),
                   onTap: () {

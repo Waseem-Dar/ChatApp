@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../../main.dart';
 import '../../widgets/user_widgets.dart';
+import '../usersPages/Flutter_Challange.dart';
 
 class SignInScreen extends StatefulWidget {
   const SignInScreen({super.key});
@@ -30,6 +31,7 @@ class _SignInScreenState extends State<SignInScreen> {
                      mainAxisAlignment: MainAxisAlignment.center,
                      children: [
                        const SizedBox(height: 40,),
+                                                                   //---------- Logo & AppName
                        Container(
                          height: 100,
                          width: 100,
@@ -62,6 +64,7 @@ class _SignInScreenState extends State<SignInScreen> {
                         ),
                         textAlign: TextAlign.center,
                       ),
+                                                              //--------------  UserInputs (Email & Password)
                       const SizedBox(height: 60,),
                       UserWidget.labelText("Email"),
                       UserWidget.textField(nameController, "Email"),
@@ -117,7 +120,7 @@ class _SignInScreenState extends State<SignInScreen> {
                                 scale: 0.6,
                                 child: Checkbox(
                                   visualDensity: const VisualDensity(horizontal: -4,vertical: -4),
-                                  fillColor: const MaterialStatePropertyAll(Color(0xFF595959)),
+                                  fillColor: const WidgetStatePropertyAll(Color(0xFF595959)),
                                   value:checkBox , onChanged: (newValue) {
                                   checkBox = newValue!;
                                   setState(() {});
@@ -133,7 +136,7 @@ class _SignInScreenState extends State<SignInScreen> {
                         ),
                       ),
                       const SizedBox(height: 35,),
-                                                             // Sign In button
+                                                                //-----------   Sign In button
                       InkWell(
                         borderRadius: BorderRadius.circular(25),
                         onTap: () {
@@ -150,7 +153,7 @@ class _SignInScreenState extends State<SignInScreen> {
                         ),
                       ),
                       const SizedBox(height: 28,),
-                                                              // Text button
+                                                              //----------      Text button
                      InkWell(
                        onTap: () {
                          Navigator.push(context, MaterialPageRoute(builder: (context) => const CreateAccountScreen(),));

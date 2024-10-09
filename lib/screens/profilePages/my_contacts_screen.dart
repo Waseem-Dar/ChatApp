@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_toggle_tab/flutter_toggle_tab.dart';
-import '../../widgets/constant.dart';
+import '../../utils/app_constant.dart';
 
 class MyContactsScreen extends StatefulWidget {
   const MyContactsScreen({super.key});
@@ -35,7 +35,7 @@ class _MyContactsScreenState extends State<MyContactsScreen> {
                       fontWeight: FontWeight.w500,fontSize: 20,color: Colors.black),textAlign: TextAlign.center,),
                  InkWell(
                    borderRadius: BorderRadius.circular(12),
-                   overlayColor: const MaterialStatePropertyAll(Colors.transparent),
+                   overlayColor: const WidgetStatePropertyAll(Colors.transparent),
                    onTap: () {},
                    child: Container(
                      margin: const EdgeInsets.symmetric(horizontal: 10),
@@ -266,33 +266,33 @@ class _MyContactsScreenState extends State<MyContactsScreen> {
               insetPadding: const EdgeInsets.symmetric(horizontal: 30),
               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(19)),
               title: Text("Designate a Guardian",style: GoogleFonts.poppins(
-          fontSize: 15,fontWeight: FontWeight.w500,color: const Color(0xFF0D4A64)),textAlign: TextAlign.center,),
+              fontSize: 15,fontWeight: FontWeight.w500,color: const Color(0xFF0D4A64)),textAlign: TextAlign.center,),
               contentPadding: const EdgeInsets.symmetric(horizontal: 20),
               actionsAlignment: MainAxisAlignment.center,
               actionsPadding: EdgeInsets.zero,titlePadding:const EdgeInsets.symmetric(vertical: 20) ,
               content: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Text.rich(
-              textAlign: TextAlign.center,
-              TextSpan(
-            children: [
-              TextSpan(text: "Make any of your trusted contacts your Guardian who will always be informed when you press ",
-                  style: GoogleFonts.poppins(fontWeight: FontWeight.w400,fontSize: 12,color: Colors.black),),
-              TextSpan(
-                text: "Help Button",style: GoogleFonts.poppins(
-                  fontSize: 12,fontWeight: FontWeight.w400,color: const Color(0xFF5C90DC)),),
-            ]
-          )),
-          const SizedBox(height: 10,),
-          const Divider(height: 0,color: Color(0x49929292),)
-        ],
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Text.rich(
+                    textAlign: TextAlign.center,
+                    TextSpan(
+                  children: [
+                    TextSpan(text: "Make any of your trusted contacts your Guardian who will always be informed when you press ",
+                        style: GoogleFonts.poppins(fontWeight: FontWeight.w400,fontSize: 12,color: Colors.black),),
+                    TextSpan(
+                      text: "Help Button",style: GoogleFonts.poppins(
+                        fontSize: 12,fontWeight: FontWeight.w400,color: const Color(0xFF5C90DC)),),
+                  ]
+                )),
+                const SizedBox(height: 10,),
+                 const Divider(height: 0,color: Color(0x49929292),)
+               ],
               ),
               actions: [
-        TextButton(
+          TextButton(
             onPressed: (){
-          Navigator.pop(context);
-        }, child: Text("Got it",style: GoogleFonts.poppins(fontWeight: FontWeight.w500,fontSize: 15,color:const Color(0xFF5C90DC)),))
+            Navigator.pop(context);
+             }, child: Text("Got it",style: GoogleFonts.poppins(fontWeight: FontWeight.w500,fontSize: 15,color:const Color(0xFF5C90DC)),))
               ],
             ));
   }

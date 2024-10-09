@@ -1,8 +1,9 @@
 import 'package:chat_app/screens/usersPages/chat_screen.dart';
-import 'package:chat_app/widgets/constant.dart';
+import 'package:chat_app/utils/app_constant.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../profilePages/new_message_screen.dart';
+import  'package:animation_list/animation_list.dart';
 
 class UsersScreen extends StatefulWidget {
   const UsersScreen({super.key});
