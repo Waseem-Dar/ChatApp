@@ -1,4 +1,4 @@
-import 'package:chat_app/screens/location_screens/send_location_screen.dart';
+import 'package:chat_app/view/location_screens/send_location_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';

@@ -1,7 +1,7 @@
-import 'package:chat_app/screens/profilePages/delete_account_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../../widgets/user_widgets.dart';
+import 'delete_account_screen.dart';
 
 class MyProfileScreen extends StatefulWidget {
   const MyProfileScreen({super.key});

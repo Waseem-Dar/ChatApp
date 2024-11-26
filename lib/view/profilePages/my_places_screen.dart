@@ -1,9 +1,10 @@
-import 'package:chat_app/screens/profilePages/add_new_place_screen.dart';
-import 'package:chat_app/screens/profilePages/delete_place_screen.dart';
 import 'package:chat_app/utils/app_constant.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+
+import 'add_new_place_screen.dart';
+import 'delete_place_screen.dart';
 
 class MyPlacesScreen extends StatefulWidget {
   const MyPlacesScreen({super.key});

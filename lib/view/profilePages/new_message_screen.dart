@@ -1,6 +1,7 @@
-import 'package:chat_app/screens/profilePages/create_group_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+
+import 'create_group_screen.dart';
 
 class NewMessageScreen extends StatefulWidget {
   const NewMessageScreen({super.key});

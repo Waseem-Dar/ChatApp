@@ -1,8 +1,8 @@
-import 'package:chat_app/screens/usersPages/chat_user_details_screen.dart';
 import 'package:chat_app/widgets/user_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../../widgets/message_card.dart';
+import 'chat_user_details_screen.dart';
 
 class ChatScreen extends StatefulWidget {
 

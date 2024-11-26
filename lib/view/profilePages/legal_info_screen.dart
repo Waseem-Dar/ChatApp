@@ -1,5 +1,5 @@
-import 'package:chat_app/screens/profilePages/privacy_details_screen.dart';
-import 'package:chat_app/screens/profilePages/terms_details_screen.dart';
+import 'package:chat_app/view/profilePages/privacy_details_screen.dart';
+import 'package:chat_app/view/profilePages/terms_details_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 

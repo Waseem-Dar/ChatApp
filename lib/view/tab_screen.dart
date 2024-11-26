@@ -1,8 +1,10 @@
-import 'package:chat_app/screens/influencer_screen.dart';
-import 'package:chat_app/screens/location_screens/location_screen.dart';
-import 'package:chat_app/screens/profilePages/profile_screen.dart';
-import 'package:chat_app/screens/usersPages/users_screen.dart';
+
+import 'package:chat_app/view/profilePages/profile_screen.dart';
+import 'package:chat_app/view/usersPages/users_screen.dart';
 import 'package:flutter/material.dart';
+
+import 'influencer_screen.dart';
+import 'location_screens/location_screen.dart';
 
 class TabScreen extends StatefulWidget {
   const TabScreen({super.key});
@@ -10,7 +12,7 @@ class TabScreen extends StatefulWidget {
   @override
   State<TabScreen> createState() => _TabScreenState();
 }
-int _currentIndex = 0;
+int _currentIndex = 1;
 final List _tabs = [
   const LocationScreen(),
   const UsersScreen(),

@@ -1,10 +1,11 @@
-import 'package:chat_app/screens/profilePages/my_places_screen.dart';
-import 'package:chat_app/screens/profilePages/about_spher_screen.dart';
-import 'package:chat_app/screens/profilePages/legal_info_screen.dart';
-import 'package:chat_app/screens/profilePages/my_contacts_screen.dart';
-import 'package:chat_app/screens/profilePages/my_profile_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+
+import 'about_spher_screen.dart';
+import 'legal_info_screen.dart';
+import 'my_contacts_screen.dart';
+import 'my_places_screen.dart';
+import 'my_profile_screen.dart';
 
 
 class ProfileScreen extends StatefulWidget {
